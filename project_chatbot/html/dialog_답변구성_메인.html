@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>AI 관리자</title>
+	<link rel="stylesheet" href="../css/builder-ui.css" />
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/tagify.css" />
+	<script src="../js/jquery-1.12.4.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/multiselect.min.js"></script> <!-- multi select js-->
+	<script src="../js/jQuery.tagify.min.js"></script>
+
+</head>
+
+<body>
+	<!-- #wrapper -->
+	<div id="wrapper">
+		<!-- #header -->
+		<div id="header" class="header-type-b">
+			<div id="header_top">
+				<span class="logo"><a href="#n"
+						onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+						the Great | 챗봇관리자</a></span>
+
+				<!-- 1 depth -->
+				<div id="gnb-t">
+					<ul>
+						<li class="active">
+							<a href="#">챗봇</a>
+						</li>
+						<li>
+							<a href="#">매뉴얼</a>
+						</li>
+						<li>
+							<a href="#">고객관리</a>
+						</li>
+						<li>
+							<a href="#">공지</a>
+						</li>
+						<li>
+							<a href="#">상담</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="info">
+					<li>
+						<span class="ic_user">
+							<i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+							홍길동
+						</span>
+					</li>
+					<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+				</ul>
+				<div class="admin_pop">
+					<button class="my_btn">마이페이지</button>
+					<button class="logout_btn">로그아웃</button>
+				</div>
+
+				<!-- 2 depth -->
+				<div id="gnb">
+					<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+					<ul>
+						<li>
+							<a href="#n"
+								onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Intents_List.html').show(); return false;"><span>Intents</span></a>
+						</li>
+						<li>
+							<a href="#n"
+								onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('MyEntity_List.html').show(); return false;"><span>Entities</span></a>
+							<ul>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('MyEntity_List.html').show(); return false;"><span>My
+											Entity</span></a>
+								</li>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('System_List_IT.html').show(); return false;"><span>System</span></a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#n"
+								onclick="$('#left').empty().load('Dialog_Tree.html').show(); $('#full').empty().hide(); $('#center').empty().load('Dialog_noplan.html'); return false;"><span>Dialog</span></a>
+						</li>
+						<!-- <li>
+								<a href="#n" onclick="$('#left').empty().load('Dialog_Tree.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Dialog</span></a>
+							</li> -->
+						<li>
+							<a href="#n"
+								onclick="$('#center').empty().load('configuration.html').show(); $('#full').empty().hide(); $('#left').empty().hide(); return false;"><span>configuration</span></a>
+						</li>
+						<li>
+							<a href="#n"
+								onclick="$('#left').empty().load('Interactive_Testbot.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Test
+									&amp; Publishing</span></a>
+							<ul>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().load('Interactive_Testbot.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Interactive
+											Test</span></a>
+								</li>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Batch_Test.html').show(); return false;"><span>Batch
+											Test</span></a>
+								</li>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Publishing.html').show(); return false;"><span>Publishing</span></a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#n"
+								onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().show(); return false;"><span>Template</span></a>
+						</li>
+						<li>
+							<a href="#n"
+								onclick="$('#full').empty().load('Dashboard.html').show();; return false;"><span>Log
+									Monitoring</span></a>
+							<ul>
+								<li>
+									<a href="#n"
+										onclick="$('#full').empty().load('Dashboard.html').show(); return false;"><span>Dashboard</span></a>
+								</li>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Log_Watcher.html').show(); return false;"><span>Log
+											Watcher</span></a>
+								</li>
+								<li>
+									<a href="#n"
+										onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Log_Manager.html').show(); return false;;"><span>Log
+											Manager</span></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 3 depth -->
+			<div id="depth2_bar"></div>
+		</div>
+		<!-- //#header -->
+
+		<!-- #container -->
+		<div id="container">
+			<!-- #right -->
+			<div id="right" style="display: none;"></div>
+			<!-- //#right -->
+			<script>
+				$("#right").load("Chatbot_Test.html");
+			</script>
+
+			<!-- #left -->
+			<div id="left">
+				<div id="dialog_tree">
+					<div class="btns_bar">
+						<div class="right">
+							<button class="btn1"><span>의도 추가</span></button>
+						</div>
+					</div>
+
+					<!--<div class="move_info">
+							<span class="message">의도 이동</span>
+							<button class="btn2"><span>취소</span></button>
+						</div>--><!-- 이동 선택시 노출 -->
+
+					<!-- .content -->
+					<div class="content">
+						<ul class="tree">
+							<li>
+								<div class="item opened active"><!-- 보기 항목 -->
+									<span class="label">보기 항목</span>
+									<button class="ct">컨텍스트 메뉴</button>
+									<button class="arr">하위목록 열기/닫기</button>
+								</div>
+								<ul>
+									<li>
+										<div class="item opened target_move"><!-- 이동할 항목 -->
+											<span class="label">이동할 항목</span>
+											<button class="ct active">컨텍스트 메뉴</button>
+											<button class="arr">하위목록 열기/닫기</button>
+
+											<!-- .ct_menu -->
+											<!--<div class="ct_menu">
+													<a href="#n" class="add_b">같은 레벨 상단에 의도 추가</a>
+													<a href="#n" class="add_a">같은 레벨 하단에 의도 추가</a>
+													<a href="#n" class="add_i">하위 레벨에 의도 추가</a>
+													<a href="#n" class="move">이동</a>
+													<a href="#n" class="del">삭제</a>
+												</div>-->
+											<!-- //.ct_menu -->
+										</div>
+										<ul>
+											<li>
+												<div class="item">
+													<span class="label">개인용 조회</span>
+													<button class="ct">컨텍스트 메뉴</button>
+													<button class="arr">하위목록 열기/닫기</button>
+												</div>
+												<ul>
+													<li>
+														<div class="item">
+															<span class="label">1</span>
+															<button class="ct">컨텍스트 메뉴</button>
+														</div>
+													</li>
+													<li>
+														<div class="item">
+															<span class="label">2</span>
+															<button class="ct">컨텍스트 메뉴</button>
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">개인용 발급</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">개인용 갱신</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">개인용 삭제</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<div class="item target_pos"><!-- 이동할 위치 기준 항목 -->
+											<span class="label">이동할 위치 기준 항목</span>
+											<button class="ct active">컨텍스트 메뉴</button>
+											<button class="arr">하위목록 열기/닫기</button>
+
+											<!-- .ct_menu -->
+											<!--<div class="ct_menu">
+													<a href="#n" class="move_b">같은 레벨 상단으로 의도 이동</a>
+													<a href="#n" class="move_a">같은 레벨 하단으로 의도 추가</a>
+													<a href="#n" class="move_i">하위 레벨로 의도 이동</a>
+												</div>-->
+											<!-- //.ct_menu -->
+										</div>
+										<ul>
+											<li>
+												<div class="item">
+													<span class="label">증권용 조회</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">증권용 발급</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">증권용 갱신</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+											<li>
+												<div class="item">
+													<span class="label">증권용 삭제</span>
+													<button class="ct">컨텍스트 메뉴</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<div class="item">
+									<span class="label">공인인증서 업무 공인인증서 업무</span>
+									<button class="ct">컨텍스트 메뉴</button>
+								</div>
+							</li>
+							<li>
+								<div class="item matching"><!-- 챗봇 테스트의 선택 항목 -->
+									<span class="label">챗봇 테스트의 선택 항목</span>
+									<button class="ct">컨텍스트 메뉴</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- //.content -->
+				</div>
+
+				<!-- .dialog_ct_menu -->
+				<div class="dialog_ct_menu" style="left:132px;top:290px;display:none;">
+					<a href="#n" class="add_b">같은 레벨 상단에 의도 추가</a>
+					<a href="#n" class="add_a">같은 레벨 하단에 의도 추가</a>
+					<a href="#n" class="add_i">하위 레벨에 의도 추가</a>
+					<a href="#n" class="move">이동</a>
+					<a href="#n" class="del">삭제</a>
+				</div>
+				<!-- //.dialog_ct_menu -->
+
+				<script>
+					(function () {
+						$(document).off('click', '#dialog_tree .tree .item').on('click', '#dialog_tree .tree .item', function () {
+							$('#center').empty().load('Dialog_Regist.html').show();
+						});
+
+						$(document).off('click', '#dialog_tree .tree .arr').on('click', '#dialog_tree .tree .arr', function (e) {
+							e.stopPropagation();
+							$(this).parent('.item').toggleClass('opened');
+						});
+					})();
+				</script>
+			</div>
+			<!-- //#left -->
+
+			<!-- #center -->
+			<div id="center" class="bg_type01">
+
+				<!-- #content -->
+				<div id="content">
+					<h2 class="titie">용어 검색(완전일치)</h2>
+					<span class="sub_tit_txt">의도명칭입니다.</span>
+					<div class="btns_bar btn_top"> <!-- class=btn_top 추가해주고 위치 변경 -->
+						<div class="right">
+							<span class="last_info">마지막 저장 : 2018.01.01 22:00:00</span>
+							<button class="btn1"><span>저장</span></button>
+							<button class="btn1" onclick="$('#center').empty().hide();"><span>취소</span></button>
+						</div>
+					</div>
+					<ul class="tab type01"> <!-- 201015 class 추가-->
+						<li class="active"><a href="#n"
+								onclick="$('#c1, #c2').hide(); $('#c3').show(); $(this).parent().addClass('active').siblings().removeClass('active'); return false;">답변구성</a>
+						</li>
+						<li><a href="#n"
+								onclick="$('#c2, #c3').hide(); $('#c1').show(); $(this).parent().addClass('active').siblings().removeClass('active'); return false;">필수개체설정</a>
+						</li>
+						<li><a href="#n"
+								onclick="$('#c1, #c3').hide(); $('#c2').show(); $(this).parent().addClass('active').siblings().removeClass('active'); return false;">API연결</a>
+						</li>
+					</ul>
+					<p class="tab_txt">* 챗봇이 대답할 답변을 여기서 작성합니다. 특정 조건에 따라 답변을 다르게 할 수도 있어요.</p>
+
+
+					<!-- Response ************************************************** -->
+					<div id="c3">
+						<div class="btns_bar">
+							<div class="left">
+								<span class="btns_group btns_fold">
+									<button class="active"
+										onclick="$('#c3 .dialog_item_box').removeClass('folded'); $(this).addClass('active').siblings().removeClass('active');"><span>펼치기</span></button>
+									<button
+										onclick="$('#c3 .dialog_item_box').addClass('folded'); $(this).addClass('active').siblings().removeClass('active');"><span>접기</span></button>
+								</span>
+							</div>
+							<div class="right">
+								<span class="btns_group btns_move">
+									<button class="ic_move_tp"><span>맨 위로 이동</span></button>
+									<button class="ic_move_up"><span>위로 이동</span></button>
+									<button class="ic_move_dn"><span>아래로 이동</span></button>
+									<button class="ic_move_bm" disabled><span>맨 아래로 이동</span></button>
+								</span>
+							</div>
+						</div>
+
+						<!-- .dialog_item_scroll -->
+						<div class="dialog_item_scroll">
+							<div class="dialog_item_scroll_inner">
+								<!-- .dialog_item_box -->
+								<div class="dialog_item_box">
+									<div class="inputAnswer_wrap">
+										<input type="text" placeholder="응답 답변 명칭을 입력하세요.">
+										<div class="btn_wrap">
+											<a href="#" class="btn2 sm">이동</a>
+											<button type="button" class="btn2 sm">삭제</button>
+										</div>
+									</div>
+									<!-- .body -->
+									<div class="body">
+										<div class="opt">
+											<table style="width:100%;" class="tb_box">
+												<colgroup>
+													<col style="width:130px;">
+													<col>
+												</colgroup>
+												<tbody>
+													<tr class="guide">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<tr>
+														<th scope="row">조건사용</th>
+														<td>
+															<label class="dt-editor-checkbox">
+																<input type="checkbox"><i>ON</i>
+															</label>
+														</td>
+													</tr>
+
+
+													<!-- 조건사용 on 일경우 -->
+													<tr class="dt-editor_cnt">
+														<th scope="row" class="vr_top">조건정의</th>
+														<td>
+															<ul class="con_define_item">
+																<li>
+																	<div class="con_define_top">
+																		<select name="" id="" class="calc"
+																			style="width: 120px;">
+																			<option>AND</option>
+																			<option>OR</option>
+																		</select>
+																		<div class="db_flex">
+																			<select name="" class="type-selector"
+																				style="width: 150px;">
+																				<optgroup label="entityGroup">
+																					<option value="card">card</option>
+																					<option value="period">period
+																					</option>
+																				</optgroup>
+																				<optgroup label="APIGroup">
+																					<option value="API">API 선택</option>
+																					<option value="period">period
+																					</option>
+																				</optgroup>
+																			</select>
+																			<div class="API textBtn_wrap"
+																				style="display: none;">
+																				<input type="text" name="" id=""
+																					style="width: 100%;" readonly>
+																				<a href="Pop_ApiKeyValue.html"
+																					class="btn2 btn_sel"
+																					onclick="openModal(this.href); return false;"><span>선택</span></a>
+																			</div>
+																		</div>
+																		<select style="width: 209px;">
+																			<option value="">같음(=)</option>
+																			<option value="">같지않음(!=)</option>
+																			<option value="">보다 작음(< )</option>
+																			<option value="">보다 큼( >)</option>
+																			<option value="">보다 작거나 같음( <=)< /option>
+																		</select>
+																	</div>
+																	<input type="text" name="conditionValue"
+																		style="width: 99.5%;" class="tags"
+																		value="대한민국, 가나다라, Apple inc">
+																	<button type="button"
+																		class="btn_del"><span>삭제</span></button>
+																</li>
+															</ul>
+
+															<div class="btn_wrap">
+																<div class="fr">
+																	<button type="button"
+																		class="btn2 btn_addCondition"><span>조건정의
+																			추가</span></button>
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+
+											<table style="width:100%;" class="tb_box">
+												<colgroup>
+													<col style="width:130px;">
+													<col>
+												</colgroup>
+												<tbody>
+													<tr>
+														<th scope="row">TTS</th>
+														<td><input type="text" style="width:100%;"
+																placeholder="TTS 템플릿을 정의해 주십시오."></td>
+													</tr>
+												</tbody>
+											</table>
+
+
+
+											<!-- 응답템플릿 구성 -->
+											<div class="tb_box">
+												<div class="tit_area">
+													<h3 class="s_tit">응답 템플릿 구성</h3>
+													<span>* 템플릿 구성을 상세보기 및 수정은 템플릿을 클릭하시면 볼 수 있습니다. </span>
+												</div>
+
+												<div class="template_type">
+													<div class="template_box">
+														<p class="tem_nom">No1 . 템플릿</p>
+														<div class="tem_right">
+															<p class="no_item_txt">구성된 응답 템플릿이 없습니다.</p>
+															<div class="btn_wrap">
+																<button class="btn2" id="openTemplateStep1"><span>템플릿
+																		생성</span></button>
+															</div>
+															<div class="iframe_area">아이프레임 영역</div>
+														</div>
+													</div>
+													<div class="btn_wrap clear">
+														<div class="fl">
+															<button type="button" class="btn2 sm btn_del_template">템플릿
+																삭제</button>
+														</div>
+														<div class="fr">
+															<button type="button" class="btn2 sm btn_add_template">템플릿
+																추가</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- //.body -->
+								</div>
+								<!-- //.dialog_item_box -->
+
+							</div>
+						</div>
+						<!-- //.scroll_area -->
+					</div>
+					<!-- //Response -->
+
+
+					<!-- 필수 Parameter ************************************************** -->
+					<div id="c1" style="display:none;">
+						<!-- .dialog_item_box -->
+						<div class="dialog_item_box">
+							<div class="head">
+								<table>
+									<tbody>
+										<tr>
+											<td><span class="label">개체명</span></td>
+											<td><span class="dt-editor-autocomplete"><span
+														class="marker a">@</span><input type="text"
+														style="width:250px;height: 40px;"
+														placeholder="개체명을 입력해 주십시오."></span></td>
+										</tr>
+									</tbody>
+								</table>
+								<span class="btns">
+									<button class="del">삭제</button>
+								</span>
+							</div>
+							<!-- .body -->
+							<div class="body">
+								<div class="type">
+									<table>
+										<tbody>
+											<tr>
+												<td><span class="label">응답유형</span></td>
+												<td>
+													<select style="width:250px;">
+														<option>선택</option>
+													</select>
+												</td>
+												<td><button class="btn2 sm" disabled><span>추가</span></button></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<!-- .added -->
+									<div class="added">
+										<h4>Text</h4>
+										<span class="btns">
+											<button class="del">삭제</button>
+										</span>
+										<div class="textarea_list_wrap">
+											<textarea class="textarea_list_item_maker" placeholder="응답 내용을 입력해 주십시오."
+												onkeydown="if(event.keyCode == 13 && $(this).val().replace(/\s/g,'').length > 0){
+													event.preventDefault();
+													var $box = $('<span>',{class:'textarea_list_item'});
+													var $textarea = $('<textarea>').val($(this).val()).bind('keydown',function(e){
+														if(e.keyCode == 13){ 
+															$(this).blur();
+														}else{
+															$(this).autoTextareaHeight();
+														}
+													});
+													var $removeBtn = $('<button>').text('삭제').click(function(){ 
+														$box.remove(); 
+													});
+													$box.append($textarea).append($removeBtn).insertBefore($(this));
+													$textarea.autoTextareaHeight()
+													$(this).val('');
+													$(this).autoTextareaHeight();
+												}else if(event.keyCode == 13){
+													event.preventDefault();
+												}else{
+													$(this).autoTextareaHeight();
+												}"></textarea>
+										</div>
+									</div>
+									<!-- //.added -->
+								</div>
+							</div>
+							<!-- //.body -->
+						</div>
+						<!-- //.dialog_item_box -->
+
+						<button class="btn2"><span>파라미터 추가</span></button>
+					</div>
+					<!-- //필수 Parameter -->
+
+
+
+					<!-- API ************************************************** -->
+					<div id="c2" style="display:none;">
+						<!-- .dialog_item_box -->
+						<div class="dialog_item_box">
+							<div class="head">
+								<table>
+									<tbody>
+										<tr>
+											<td><span class="label">API</span></td>
+											<td>
+												<select style="width:250px;">
+													<option>사용안함</option>
+												</select>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- //.dialog_item_box -->
+					</div>
+					<!-- //API -->
+
+
+
+
+
+
+
+				</div>
+				<!-- //#content -->
+			</div>
+			<!-- //#center -->
+
+
+			<!-- #full -->
+			<div id="full" style="display: none;"></div>
+			<!-- //#full -->
+
+			<script>
+				var intentsList = ["ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㄱㄱ", "ㄴㄴ", "ㄷㄷ", "ㄹㄹ", "가", "나", "다", "라", "가나", "다라", "마바", "사아", "자차", "카타", "파하", "가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"]; //의도 목록
+				for (i = 0; i < 1000; i++) intentsList.push("가나다라마바사"); //테스트용
+				var entitiesList = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅌ", "ㅋ", "ㅍ", "ㅎ", "ㄱㄱ", "ㄴㄴ", "ㄷㄷ", "ㄹㄹ", "가", "나", "다", "라", "가나", "다라", "마바", "사아", "자차", "카타", "파하"]; //개체 목록
+
+				(function () {
+					/* ---------- DataTables ---------- */
+
+					function fullScrollTableSet() {
+						//세로로 꽉 차는 scrollBody 만들기
+						var $tbody = $(".dataTables_scrollBody_full");
+						$tbody.each(function () {
+							var $tWrap = $(this).closest(".dataTables_wrapper");
+							var $this = $(this);
+							var spaceHeight = $("#container").height() - $tWrap.position().top - ($this.offset().top - $tWrap.offset().top) - 20;
+							var minHeight = 200;
+							$this.css("max-height", Math.max(spaceHeight, minHeight));
+							this.api.columns.adjust(); //window.resize 외의 요소로 스크롤바 show/hide에 따른 DataTables 칼럼 폭 리사이즈
+						});
+					}
+					$(document).on("init.dt", function (e, settings) {
+						//테이블 생성할 때 옵션 'scrollY' 값이 '0'이면 'fullScrollTable'
+						var api = new $.fn.dataTable.Api(settings);
+						if (settings.nScrollBody && settings.nScrollBody.clientHeight == 0) {
+							$(settings.nScrollBody).addClass("dataTables_scrollBody_full");
+							$(settings.nScrollBody)[0].api = api;
+						}
+						fullScrollTableSet();
+					});
+					$(window).resize(function () {
+						fullScrollTableSet();
+					});
+					$(document).on("show hide", ".searched_info", function () {
+						fullScrollTableSet();
+					});
+
+					/* ---------- .dt-editor-input ---------- */
+					$(document).on("click", ".dt-editor-input", function () {
+						if (!$(this).hasClass("active")) {
+							var $selected = $(this);
+							$selected.addClass("active");
+							var string = $selected.text();
+							var $input = $('<input type="text">');
+							$selected.html($input);
+							$input.focus().val(string);
+							$(window).trigger("resize");
+
+							$input.bind("focusout keydown", function (e) {
+								if (e.type == "focusout" || e.keyCode == 13) {
+									$selected.html($(this).val()).removeClass("active");
+									$(window).trigger("resize");
+								}
+							});
+						}
+					});
+
+					/* ---------- .dt-editor-multiple ---------- */
+					$(document).on("click", ".dt-editor-multiple", function () {
+						if (!$(this).hasClass("input_list_wrap")) {
+							var $selected = $(this);
+							$selected.addClass("input_list_wrap");
+							var $box;
+							var $input;
+							var $removeBtn;
+							var $items = [];
+							var $span = $selected.find("span");
+							for (i = 0; i < $span.length; i++) {
+								$box = $("<span>", { class: "input_list_item" });
+								$input = $("<input>", { type: "text" }).val($span.eq(i).text());
+								$removeBtn = $("<button>")
+									.text("삭제")
+									.click(function () {
+										$(this).closest(".input_list_item").remove();
+										$(window).trigger("resize");
+									});
+								$items.push($box.append($input).append($removeBtn));
+							}
+							var $maker = $("<input>", { type: "text", class: "input_list_item_maker", placeholder: "유의어를 입력해 주십시오." }).keydown(function (e) {
+								if (e.keyCode == 13 && $(this).val().replace(/\s/g, "").length > 0) {
+									var $box = $("<span>", { class: "input_list_item" });
+									var $input = $("<input>", { type: "text" }).val($(this).val());
+									var $removeBtn = $("<button>")
+										.text("삭제")
+										.click(function () {
+											$box.remove();
+											$(window).trigger("resize");
+										});
+									$box.append($input).append($removeBtn).insertBefore($(this));
+									$maker.val("");
+									setTimeout(function () {
+										$maker.focus();
+									}, 0); //추가 중 스크롤이 발생했을 때 브라우저의 scrollTop 회귀를 막는다.
+									$(window).trigger("resize");
+								}
+							});
+							$items.push($maker);
+							$selected.html($items);
+							setTimeout(function () {
+								$maker.focus();
+							}, 0);
+							$(window).trigger("resize");
+						}
+					});
+
+					$(document).bind("click", function (e) {
+						var $clearTarget = $(".dt-editor-multiple.input_list_wrap");
+						$clearTarget.each(function () {
+							var $this = $(this);
+							var box = $this.offset();
+							box.right = box.left + $(this).outerWidth();
+							box.bottom = box.top + $(this).outerHeight();
+							if (!(box.left <= e.pageX && e.pageX <= box.right && box.top <= e.pageY && e.pageY <= box.bottom)) {
+								var $content = $("#content");
+								console.log(e.target.id);
+								if (e.target.className == "dataTables_scrollBody" || ((e.target.id == "center" || e.target.id == "full") && e.pageX > $content.offset().left + $content.outerWidth())) {
+									return; //스크롤바 클릭은 제외
+								}
+								var $items = [];
+								var $input = $this.find(".input_list_item>input[type=text]");
+								for (i = 0; i < $input.length; i++) $items.push($("<span>").text($input.eq(i).val()));
+								setTimeout(function () {
+									$this.html($items).removeClass("input_list_wrap");
+									$(window).trigger("resize");
+								}, 0);
+							}
+						});
+					});
+
+					/* ---------- .dt-editor-autocomplete ---------- */
+					var $content;
+					var $selectedInput;
+
+					/* 선택창 활성화 */
+					$(document).on("click", ".dt-editor-autocomplete>input[type=text]", function () {
+						if (!$selectedInput) {
+							$selectedInput = $(this);
+							$selectedInput[0].originVal = $selectedInput.val();
+							$marker = $selectedInput.prev(".marker");
+							$selectedInput.addClass("active");
+							$content = $selectedInput.parents();
+							$content.bind("scroll.removeAutocompleteOptBox", removeOpt);
+
+							var input = $selectedInput.offset();
+							var $optBox = $("<div>", { class: "autocomplete_opt_box" }).css({ left: input.left, width: $selectedInput.outerWidth() });
+							if (input.top < ($(window).height() * 2) / 3 && !$(this).closest(".dt-editor-autocomplete").hasClass("up")) {
+								$optBox.css("top", input.top + $selectedInput.outerHeight());
+							} else {
+								$optBox.css("bottom", $(window).height() - input.top);
+							}
+							var $optList = $("<ul>", { class: "filtered" });
+							var $etc;
+							if ($marker.hasClass("s")) {
+								$optList.addClass("s");
+								$etc = $("<ul><li>의도 없음</li></ul>");
+							} else if ($marker.hasClass("a")) {
+								$optList.addClass("a");
+								$etc = $("<ul><li>개체 없음</li></ul>");
+							}
+
+							$optBox.html($optList).append($etc);
+							$("#blank").append($optBox);
+
+							clearTimeout(filterTimeout);
+							filterTimeout = setTimeout(function () {
+								filterOpt($optList, $selectedInput[0].originVal);
+							}, 0);
+						}
+					});
+
+					/* 선택창 필터링 (IE에서 응답성이 떨어짐) */
+					var optTimeout;
+					var filterTimeout;
+					$(document).on("input propertychange", ".dt-editor-autocomplete>input[type=text]", function () {
+						clearTimeout(filterTimeout);
+						clearTimeout(optTimeout);
+						var val = $(this).val();
+						var $optList = $(".autocomplete_opt_box>ul.filtered");
+						optTimeout = setTimeout(function () {
+							if ($optList[0]) {
+								$optList.html('<li class="message">검색 중입니다.</li>');
+								filterTimeout = setTimeout(function () {
+									filterOpt($optList, val);
+								}, 500);
+							}
+						}, 0);
+					});
+					function filterOpt($optList, val) {
+						var $filtered = [];
+						var optList = $marker.hasClass("s") ? intentsList : entitiesList;
+						for (i = 0; i < optList.length; i++) {
+							if (optList[i].indexOf(val) > -1) $filtered.push($("<li>" + optList[i] + "</li>"));
+						}
+						if ($filtered.length == 0) $filtered.push($('<li class="message">검색 결과가 없습니다.</li>'));
+						$optList.html($filtered);
+					}
+
+					/* 항목 선택 */
+					$(document).on("mousedown", ".autocomplete_opt_box>ul>li:not(.message)", function () {
+						$selectedInput.val($(this).text()).attr("title", $(this).text()).removeClass("active");
+						$(this).closest(".autocomplete_opt_box").remove();
+						$selectedInput = null;
+						$content.unbind("scroll.removeAutocompleteOptBox");
+					});
+
+					/* 선택창 제거 */
+					$(window).bind("resize", removeOpt);
+					function removeOpt() {
+						if ($selectedInput) {
+							clearTimeout(filterTimeout);
+							$selectedInput.val($selectedInput[0].originVal).attr("title", $selectedInput[0].originVal).removeClass("active");
+							$(".autocomplete_opt_box").remove();
+							$selectedInput = null;
+							$content.unbind("scroll.removeAutocompleteOptBox");
+						}
+					}
+					$(document).bind("mousedown", docDown);
+					function docDown(e) {
+						var $clearTarget = $(".autocomplete_opt_box");
+						$clearTarget.each(function () {
+							if ($(e.target)[0] != $selectedInput[0]) {
+								var box = $(this).offset();
+								box.right = box.left + $(this).outerWidth();
+								box.bottom = box.top + $(this).outerHeight();
+								if (!(box.left <= e.pageX && e.pageX <= box.right && box.top <= e.pageY && e.pageY <= box.bottom)) {
+									clearTimeout(filterTimeout);
+									$selectedInput.val($selectedInput[0].originVal).attr("title", $selectedInput[0].originVal).removeClass("active");
+									$(this).remove();
+									$selectedInput = null;
+									$content.unbind("scroll.removeAutocompleteOptBox");
+								}
+							}
+						});
+					}
+
+					/* ---------- .dt-editor-highlighted ---------- */
+					var $content2;
+					var $downTarget; //selection
+					var $highlightTarget; //selection
+					var highlightedSelection; //selection
+					var $matchedTarget; //matched click
+					var $fixedInput;
+
+					/* autocomplete 활성화 - selection */
+					$(document).on("mousedown", ".dt-editor-highlighted", function () {
+						$downTarget = $(this);
+					});
+					$(document).on("mouseup", ".dt-editor-highlighted", function (e) {
+						if ($downTarget && $(e.target)[0] == $downTarget[0]) {
+							highlightedSelection = window.getSelection().getRangeAt(0);
+							var offset = highlightedSelection.getBoundingClientRect();
+							if (highlightedSelection.startContainer == highlightedSelection.endContainer && highlightedSelection.toString().replace(/\s/g, "").length > 0) {
+								$highlightTarget = $(this);
+								$content2 = $highlightTarget.parents();
+								$content2.bind("scroll.removeAutocompleteOptBox", removeOpt).bind("scroll.removeAutocompleteOptBox2", removeOpt2);
+
+								var extracted = highlightedSelection.extractContents();
+								var em = document.createElement("em");
+								em.setAttribute("class", "highlighted");
+								em.appendChild(extracted);
+								highlightedSelection.insertNode(em);
+
+								var $inputBox = $('<span class="dt-editor-autocomplete"><span class="marker a">@</span><input type="text" placeholder="개체명을 입력해 주십시오."></span>').css({ position: "fixed", left: offset.left, top: offset.top + offset.height, width: 250 });
+								$("#blank").append($inputBox);
+								$fixedInput = $inputBox.children("input[type=text]");
+								if (offset.top + offset.height > ($(window).height() * 2) / 3) {
+									$inputBox.addClass("up").css("top", offset.top - $inputBox.outerHeight());
+								}
+								$fixedInput.click().focus();
+							}
+						}
+						$downTarget = null;
+					});
+
+					/* autocomplete 활성화 - matched click */
+					$(document).on("click", ".dt-editor-highlighted>em:not(.highlighted)", function (e) {
+						$matchedTarget = $(this);
+						$content2 = $(this).parents();
+						$content2.bind("scroll.removeAutocompleteOptBox", removeOpt).bind("scroll.removeAutocompleteOptBox2", removeOpt2);
+
+						var offset = $matchedTarget.offset();
+						var e = $matchedTarget.children(".e").text();
+						var $inputBox = $('<span class="dt-editor-autocomplete"><span class="marker a">@</span><input type="text" placeholder="개체명을 입력해 주십시오."></span>').css({ position: "fixed", left: offset.left, top: offset.top + $(this).height(), width: 250 });
+						$("#blank").append($inputBox);
+						$fixedInput = $inputBox.children("input[type=text]");
+						if (offset.top + $(this).height() > ($(window).height() * 2) / 3) {
+							$inputBox.addClass("up").css("top", offset.top - $inputBox.outerHeight());
+						}
+						$fixedInput.click().focus().val(e);
+					});
+
+					/* 항목 선택 */
+					$(document).on("mousedown", ".autocomplete_opt_box>ul.filtered>li:not(.message)", function () {
+						if (highlightedSelection) {
+							var $matchingTarget = $highlightTarget.children(".highlighted");
+							var text = $matchingTarget.text();
+							var before = "";
+							var after = "";
+							if (text.charAt(0) == " ") {
+								text = text.substring(1);
+								before = " ";
+							}
+							if (text.charAt(text.length - 1) == " ") {
+								text = text.substring(0, text.length - 1);
+								after = " ";
+							}
+							$matchingTarget.html(before + '[@<span class="e">' + $(this).text() + '</span>:<span class="w">' + text + "</span>]" + after).removeClass("highlighted");
+							$("#blank>.dt-editor-autocomplete").remove();
+							highlightedSelection = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind("scroll.removeAutocompleteOptBox2");
+						} else if ($matchedTarget) {
+							$matchedTarget.children(".e").text($(this).text());
+							$("#blank>.dt-editor-autocomplete").remove();
+							$matchedTarget = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind("scroll.removeAutocompleteOptBox2");
+						}
+					});
+					$(document).on("mousedown", ".autocomplete_opt_box>ul:not(.filtered)>li", function () {
+						if ($matchedTarget) {
+							var $parent = $matchedTarget.closest(".dt-editor-highlighted");
+							$matchedTarget.text($matchedTarget.children(".w").text());
+							$matchedTarget.contents().unwrap();
+							$parent.html($parent.html());
+							$("#blank>.dt-editor-autocomplete").remove();
+							$matchedTarget = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind("scroll.removeAutocompleteOptBox2");
+						}
+					});
+
+					/* autocomplete 제거 */
+					$(window).bind("resize", removeOpt2);
+					function removeOpt2() {
+						if ($fixedInput) {
+							clearTimeout(filterTimeout);
+							$("#blank>.dt-editor-autocomplete").remove();
+							if (highlightedSelection) {
+								$highlightTarget.children(".highlighted").contents().unwrap();
+								$highlightTarget.html($highlightTarget.html());
+								highlightedSelection = null;
+							} else if ($matchedTarget) {
+								$matchedTarget = null;
+							}
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind("scroll.removeAutocompleteOptBox2");
+						}
+					}
+					$(document).bind("mousedown", docDown2);
+					function docDown2(e) {
+						var $clearTarget = $("#blank>.dt-editor-autocomplete");
+						$clearTarget.each(function () {
+							var box = $(this).offset();
+							box.right = box.left + $(this).outerWidth();
+							box.bottom = box.top + $(this).outerHeight();
+							var lastTop = box.top;
+							var lastBottom = box.bottom;
+
+							if ($(this).next(".autocomplete_opt_box")[0]) {
+								var $optBox = $(this).next(".autocomplete_opt_box");
+								var box2 = $optBox.offset();
+								box2.bottom = box2.top + $optBox.outerHeight();
+								lastTop = Math.min(box.top, box2.top);
+								lastBottom = Math.max(box.bottom, box2.bottom);
+							}
+
+							if (!(box.left <= e.pageX && e.pageX <= box.right && lastTop <= e.pageY && e.pageY <= lastBottom)) {
+								clearTimeout(filterTimeout);
+								$(this).remove();
+								if (highlightedSelection) {
+									$highlightTarget.children(".highlighted").contents().unwrap();
+									$highlightTarget.html($highlightTarget.html());
+									highlightedSelection = null;
+								} else if ($matchedTarget) {
+									$matchedTarget = null;
+								}
+								$fixedInput = null;
+								$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind("scroll.removeAutocompleteOptBox2");
+							}
+						});
+					}
+				})();
+			</script>
+		</div>
+		<!-- //#container -->
+
+	</div>
+	<!-- //#wrapper -->
+
+	<script src="../js/builder-ui.js"></script>
+	<script>
+		(function () {
+			// 태그
+			$('.tags').tagify({
+				whitelist: [
+					{ "id": 1, "value": "가나다라" },
+					{ "id": 2, "value": "대한민국" },
+					{ "id": 3, "value": "apple" },
+					{ "id": 4, "value": "google" }
+				]
+			});
+
+			// 템플릿 추가
+			$(document).on('click', '.btn_add_template', function () {
+				var btnWrap = $(this).parent().parent();
+				var templateType = $(btnWrap).parent();
+				var cloneTemplate = $(templateType).clone();
+
+				$(cloneTemplate).find('ul').children().remove();
+				$(cloneTemplate).find('.tem_right').addClass('no_item');
+				$(templateType).parent().append(cloneTemplate);
+				$(this).addClass('disabled');
+
+				// 템플릿 제목
+				$('.template_box').each(function (i) {
+					$(this).find('.tem_nom').text('No' + (i + 1) + '. 템플릿');
+				});
+
+			});
+
+			// 템플릿 삭제
+			$(document).on('click', '.btn_del_template', function () {
+				$(this).parent().parent().parent().remove();
+				$('.tb_box .template_type .btn_add_template').last().removeClass('disabled');
+			});
+
+			// 조건정의 추가
+			$('.btn_addCondition').click(function () {
+				var ul = $(this).parent().parent().siblings('.con_define_item');
+				var firstItem = $(ul).find('li').first();
+				var cloneItem = $(firstItem).clone();
+				$(cloneItem).find('input, select').val();
+				$(cloneItem).find('.textBtn_wrap').hide();
+				$(cloneItem).find('select option:eq(0)').attr('selected', 'selected');
+				$(ul).append(cloneItem);
+			});
+
+			// 조건정의 삭제
+			$(document).on('click', '.con_define_item > li > .btn_del', function () {
+				$(this).parent().remove();
+			});
+
+			// 조건사용 on 일경우
+			$('.dt-editor_cnt').hide();
+			$(".dt-editor-checkbox input:checkbox").on('click', function () {
+				if ($(this).prop('checked')) {
+					$('.dt-editor_cnt').show();
+				} else {
+					$('.dt-editor_cnt').hide();
+				};
+			});
+
+		})();
+	</script>
+</body>
+
+</html>

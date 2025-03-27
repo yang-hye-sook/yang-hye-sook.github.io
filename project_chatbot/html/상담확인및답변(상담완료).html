@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/consulting.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header" class="header-type-b">
+				<div id="header_top" class="company_hd">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">메뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">팀관리</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">공지·Help</a>
+                           </li>
+                           <li>
+                               <a href="#">대시보드</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+				</div>
+				<!-- 클래스 추가 : gnb_com  -->
+				<div id="gnb" class="gnb_com">
+					<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+					<ul>
+						<li>
+							<a href="#n"><span>공지사항</span></a>
+                        </li>
+                        <li class="active">
+							<a href="#n"><span>Help</span></a>
+						</li>
+					</ul>
+				</div>
+				<div id="util">
+					<a href="#n" class="ic_setting">설정</a>
+					<a href="#n" class="ic_test" onclick="$('#right').show(); return false;">학습 테스트</a>
+				</div>
+				<div id="depth2_bar"></div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+
+                <!-- /#content -->
+                <div id="content">
+                    <!-- sub title -->
+                    <div class="tit-area">
+                        <p class="tit-sec">상담 확인</p>
+                    </div>
+                    <div class="center-in c-management-register">
+                        <form action="">
+                            <div class="tb-sty-02">
+                                <table>
+                                    <caption>기업정보 등록 표로 기업명, 대표자, 기업전화번호, 인프라, 기업로고에 따라 작성되었습니다.</caption>
+                                    <colgroup>
+                                        <col style="width:15%">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>신청자</th>
+                                            <td>
+                                                <p>강호동(010-9999-0000) / avg@mail.com</p>                                   
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>신청일</th>
+                                            <td>
+                                                <p>2020.05.01 12:12</p>  
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상담구분</th>
+                                            <td>
+                                                <p>서비스신청</p>  
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" placeholder="챗봇 서비스를 신청하려고 합니다." maxlength="20">                                                                                         
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>내용</th>
+                                            <td>
+                                                <textarea class="textarea" name="" id="" placeholder="포스코ICT 챗봇 서비스에 대해 알아보고, 서비스를 신청하려고 합니다. 서비스 정보와 신청 방법에 대해 답변 부탁드립니다." cols="30" rows="10"></textarea>                                                
+                                            </td>
+                                        </tr>                                     
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="bot-ui">
+                                <button type="button" class="btn_delte">삭제</button>
+                                <button type="">수정</button>
+                                <button type="">목록</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                 <!-- /#content -->
+            </div>
+            <!-- //#container -->
+
+
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

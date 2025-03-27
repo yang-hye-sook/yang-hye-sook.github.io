@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>플랫폼 관리자용 대시보드</title>        
+        <link rel="stylesheet" href="../css/chatbot.css" />        	
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/dashboard.css"> 
+		<script src="../js/jquery-3.3.1.min.js"></script>   
+		<script src="../js/common.js"></script>         
+	</head>
+	<body>
+		<div class="wrapper">
+            <!-- #header -->
+			<div id="header" class="n_hd_com"> <!-- header가 1depth만 있을경우 class="n_hd_com" 를 붙여 준다. -->
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+					
+					<!-- 1 depth -->
+					<div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+					<div class="admin_pop">
+						<button class="my_btn">마이페이지</button>
+						<button class="logout_btn">로그아웃</button>
+					</div>
+				</div>
+            </div>
+            <!-- //#header -->
+
+			<!-- main -->
+			<main class="main dashboard">
+				<section class="left">
+					<div class="input-group">
+						<div class="select">
+							<select name="" id="">
+								<option value="기업별 챗봇정보" selected="">전체</option>
+								<option value="기업별 챗봇정보">기업별 챗봇정보</option>
+							</select>
+						</div>
+						<label for="" class="input">
+							<input type="text" class="calendar" placeholder="YYYYMMDD" />
+							<span class="bar">~</span>
+							<input type="text" class="calendar" placeholder="YYYYMMDD" />
+						</label>
+						<div class="input">
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1일</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1주</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1개월</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>3개월</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>6개월</span>
+							</label>
+						</div>
+						<button type="button" class="button-search-all"><span>조회</span></button>
+					</div>
+					<div class="row">
+						<div class="quarter">
+							<div class="top_num">
+								<span class="num01">1</span><span class="num02">2</span><span class="num03">3</span><span class="num04">4</span><span class="num05">5</span>
+							</div>
+							<div class="quarter-text">
+								<div class="link"><a href="#">더 보기</a></div>
+								<div class="title">기업별 챗봇 현황 TOP5</div>
+								<p class="tit_top">TOP5</p>
+							</div>
+							<div class="graph">
+								<canvas id="chatbot"></canvas>
+							</div>
+						</div>
+						<div class="quarter eq3">
+							<div class="quarter-text">
+								<div class="title">접속 환경</div>
+								<div class="type color">전체</div>
+							</div>
+							<div class="graph">
+								<div class="number"><strong>256</strong>건</div>
+								<canvas id="enviroment"></canvas>
+							</div>
+						</div>
+						<div class="quarter eq2 width_size">
+							<div class="quarter-text">
+								<div class="title">방문자 수 추이</div>
+								<div class="type">전체</div>
+							</div>
+							<div class="graph">
+								<div class="number"><strong>256</strong>건</div>
+								<canvas id="visitor"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="quarter eq2 nv">
+							<div class="quarter-text">
+								<div class="link"><a href="#">더 보기</a></div>
+								<div class="title">상담문의 현황</div>								
+							</div>
+							<div class="graph">
+								<canvas id="understanding" class="com_under"></canvas>
+							</div>
+						</div>
+						<div class="quarter eq3 lists dash_list">
+							<!-- 1103 추가 -->
+							<ul class="tabs">
+								<li class="tab-link current" data-tab="tab-1">활용도 상위 질문</li>
+								<li class="tab-link" data-tab="tab-2">활용도 하위 질문</li>
+							</ul>
+							<div id="tab-1" class="tab-content current">
+								<ol>
+									<li>
+										<a href="#">승진기준문의</a>
+										<span>193건</span>
+									</li>
+									<li>
+										<a href="#">알수 없는 의도</a>
+										<span>107건</span>
+									</li>
+									<li>
+										<a href="#">월급 알아보기</a>
+										<span>24건</span>
+									</li>
+									<li>
+										<a href="#">우리부서휴가자알아보기</a>
+										<span>19건</span>
+									</li>
+									<li>
+										<a href="#">내월급알려줘</a>
+										<span>17건</span>
+									</li>
+								</ol>
+							</div>								
+							<div id="tab-2" class="tab-content">
+								<ol>
+									<li>
+										<a href="#">두번째 탭</a>
+										<span>193건</span>
+									</li>
+									<li>
+										<a href="#">알수 없는 의도</a>
+										<span>107건</span>
+									</li>
+									<li>
+										<a href="#">월급 알아보기</a>
+										<span>24건</span>
+									</li>
+									<li>
+										<a href="#">우리부서휴가자알아보기</a>
+										<span>19건</span>
+									</li>
+									<li>
+										<a href="#">내월급알려줘</a>
+										<span>17건</span>
+									</li>
+								</ol>
+							</div>
+							<!-- 1103 추가 end-->							
+						</div>
+						<div class="quarter eq4 lists">
+							<div class="lists-title">
+								공지사항
+								<div class="link"><a href="#">더 보기</a></div>
+							</div>							
+							<ol>
+								<li>
+									<a href="#">근태담당자안내</a>
+									<img src="../images/icon_list_new.png" alt="">
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">HR도우미 알수 없는 의도</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">HR도우미 알수 없는 의도</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">HR도우미 알수 없는 의도</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">HR도우미 알수 없는 의도</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!-- main -->
+			 
+			<!-- footer // -->
+			<footer class="footer">
+				<!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+				<div class="footer-inner">
+					<div class="info">
+						<span class="info-title">대표관리자</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(서비스)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(기술)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+				</div>
+			</footer>
+			<!-- // footer -->
+		</div>	
+			
+        
+        <script src="../js/chatbot.js"></script>
+        <script src="../js/chart.min.js"></script>
+        <script>
+			var opt = {
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [
+						{
+							ticks: {
+								max: 100,
+								min: 0,
+								stepSize: 50,
+								fontColor: "rgba(255,255,255,0.5)",
+								color: "green",
+								padding: 4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0.5)",
+								zeroLineWidth: 2,
+								zeroLineColor: "rgba(255,255,255,0.5)",
+							},
+						},
+					],
+					xAxes: [
+						{
+							ticks: {
+								fontColor: "rgba(255,255,255,0.5)",
+								padding: -4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0)",
+								zeroLineWidth: 1,
+								zeroLineColor: "rgba(255,255,255,0)",
+								drawOnChartArea: false,
+							},
+						},
+					],
+				},
+				animation: {
+					onComplete: function () {
+						var ctx = this.chart.ctx;
+						ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+						ctx.fillStyle = "#fff";
+						ctx.textAlign = "center";
+						ctx.textBaseline = "bottom";
+
+						this.data.datasets.forEach(function (dataset) {
+							for (var i = 0; i < dataset.data.length; i++) {
+								for (var key in dataset._meta) {
+									var model = dataset._meta[key].data[i]._model;
+									ctx.fillText(dataset.data[i], model.x, model.y - 6);
+								}
+							}
+						});
+					},
+				},
+				maintainAspectRatio: false,
+			};
+			//챗봇현황
+			var chatbotCtx = document.getElementById("chatbot").getContext("2d");
+			var chatbotData = {
+				labels: ["Google", "POSCO ICT", "Netflix", "두산인프라코어", "POSCO"],
+				datasets: [
+					{
+						data: [80, 46, 32, 24, 16],
+						backgroundColor: ["#00b0f0", "#c55a11", "#e9c06f", "#ffc200", "#4b505e"],
+						borderColor: ["#00b0f0", "#c55a11", "#e9c06f", "#ffc200", "#4b505e"],
+						hoverBackgroundColor: ["#00b0f0", "#c55a11", "#e9c06f", "#ffc200", "#4b505e"],
+						hoverBorderColor: ["#00b0f0", "#c55a11", "#e9c06f", "#ffc200", "#4b505e"],
+					},
+				],
+			};
+			var chart = new Chart(chatbotCtx, {
+				type: "doughnut",
+				data: chatbotData,
+				options: {
+					legend: {
+						position: "left",
+						labels: {
+							fontSize: 13,
+							padding: 14,
+							boxWidth: 10,
+							usePointStyle: true,
+						},
+					},
+					cutoutPercentage: 30,
+					maintainAspectRatio: false,
+					animation: {
+						duration: 500,
+						onComplete: function () {
+							var ctx = this.chart.ctx;
+							ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+							ctx.textAlign = "center";
+							ctx.textBaseline = "bottom";
+
+							this.data.datasets.forEach(function (dataset) {
+								for (var i = 0; i < dataset.data.length; i++) {
+									var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+										total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+										mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+										start_angle = model.startAngle,
+										end_angle = model.endAngle,
+										mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+									var x = mid_radius * Math.cos(mid_angle);
+									var y = mid_radius * Math.sin(mid_angle);
+
+									ctx.fillStyle = "#fff";
+									if (i == 3) {
+										// Darker text color for lighter background
+										// ctx.fillStyle = "#444";
+									}
+									var str = "건";
+									ctx.fillText(dataset.data[i] + str, model.x + x, model.y + y);
+								}
+							});
+						},
+					},
+				},
+			});
+			// 챗봇현황
+			//챗봇현황
+			var enviromentCtx = document.getElementById("enviroment").getContext("2d");
+			var enviromentData = {
+				labels: ["PC", "Mobile"],
+				datasets: [
+					{
+						data: [150, 106],
+						backgroundColor: ["rgb(199,167,128)", "rgb(75,80,94)"],
+						borderColor: ["rgb(199,167,128)", "rgb(75,80,94)"],
+						hoverBackgroundColor: ["rgb(199,167,128)", "rgb(75,80,94)"],
+						hoverBorderColor: ["rgb(199,167,128)", "rgb(75,80,94)"],
+					},
+				],
+			};
+			var chart2 = new Chart(enviromentCtx, {
+				type: "doughnut",
+				data: enviromentData,
+				options: {
+					legend: {
+						position: "left",
+						labels: {
+							fontSize: 15,
+							padding: 12,
+							boxWidth:6,
+							usePointStyle: true,
+							fontColor: "#000",
+						},
+					},
+					cutoutPercentage: 30,
+					maintainAspectRatio: false,
+					animation: {
+						duration: 500,
+						onComplete: function () {
+							var ctx = this.chart.ctx;
+							ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+							ctx.textAlign = "center";
+							ctx.textBaseline = "bottom";
+
+							this.data.datasets.forEach(function (dataset) {
+								for (var i = 0; i < dataset.data.length; i++) {
+									var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+										total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+										mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+										start_angle = model.startAngle,
+										end_angle = model.endAngle,
+										mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+									var x = mid_radius * Math.cos(mid_angle);
+									var y = mid_radius * Math.sin(mid_angle);
+
+									ctx.fillStyle = "#fff";
+									if (i == 3) {
+										// Darker text color for lighter background
+										// ctx.fillStyle = "#444";
+									}
+									var str = "건";
+									ctx.fillText(dataset.data[i] + str, model.x + x, model.y + y);
+								}
+							});
+						},
+					},
+				},
+			});
+			// 챗봇현황
+			// 방문자 수 추이
+			var visitorData = {
+				labels: ["4.23", "4.24", "4.25", "4.26", "4.27", "4.28", "4.29", "4.30"],
+				datasets: [
+					{
+						borderColor: "#263e73",
+						borderWidth: 1,
+						fill: false,
+						tension: 0,
+						pointBorderWidth: 2,
+						pointRadius: 4,
+						pointBorderColor: "#fff",
+						pointBackgroundColor: "#4f80e1",
+						data: [75, 35, 76, 55, 60, 85, 35, 82],
+					},
+				],
+			};
+			var visitorCtx = document.getElementById("visitor").getContext("2d");
+			var chart3 = new Chart(visitorCtx, {
+				type: "line",
+				data: visitorData,
+				options: opt,
+			});
+			// /방문자 수 추이
+
+			// 상담문의 현황
+			var understandingCtx = document.getElementById("understanding").getContext("2d");
+			var understandingData = {
+				labels: ["상담등록", "상담완료","부적격 상담"],
+				datasets: [
+					{
+						backgroundColor: ["#f9f9f9", "#c7a780","#f9f9f9"],
+						borderColor: ["#f9f9f9", "#c7a780","#f9f9f9"],
+						barThickness: 30,
+						data: [160, 80,160],
+					},
+				],
+			};
+			var opt2 = {
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [
+						{
+							ticks: {
+								max: 300,
+								min: 0,
+								stepSize: 50,
+								fontColor: "rgba(255,255,255,0.5)",
+								color: "green",
+								padding: 4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0.5)",
+								zeroLineWidth: 2,
+								zeroLineColor: "rgba(255,255,255,0.5)",
+							},
+						},
+					],
+					xAxes: [
+						{
+							ticks: {
+								fontColor: "rgba(255,255,255,0.5)",
+								padding: -4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0)",
+								zeroLineWidth: 1,
+								zeroLineColor: "rgba(255,255,255,0)",
+								drawOnChartArea: false,
+							},
+						},
+					],
+				},
+				animation: {
+					onComplete: function () {
+						var ctx = this.chart.ctx;
+						ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+						ctx.fillStyle = "#fff";
+						ctx.textAlign = "center";
+						ctx.textBaseline = "bottom";
+
+						this.data.datasets.forEach(function (dataset) {
+							for (var i = 0; i < dataset.data.length; i++) {
+								for (var key in dataset._meta) {
+									var model = dataset._meta[key].data[i]._model;
+									ctx.fillText(dataset.data[i], model.x, model.y - 4);
+								}
+							}
+						});
+					},
+				},
+			};
+			var chart4 = new Chart(understandingCtx, {
+				type: "bar",
+				data: understandingData,
+				options: opt2,
+			});
+			// 상담문의 현황
+			
+		</script>
+		<script>
+			window.onload = function() {
+                list_toggle();
+            }
+            function list_toggle(){
+				$('ul.tabs li').click(function(){
+					var tab_id = $(this).attr('data-tab');
+				
+					$('ul.tabs li').removeClass('current');
+					$('.tab-content').removeClass('current');
+				
+					$(this).addClass('current');
+					$("#"+tab_id).addClass('current');
+				})
+			} 
+		</script>
+	</body>
+</html>

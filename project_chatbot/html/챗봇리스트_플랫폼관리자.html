@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>플랫폼 관리자용 챗봇리스트</title>
+        <link rel="stylesheet" href="../css/chatbot.css" />  
+		<link rel="stylesheet" href="../css/common.css" />  
+        <link rel="stylesheet" href="../css/chatbot_admin.css" />  
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper" class="wrapper">
+			<!-- #header -->
+			<div id="header" class="header-type-b">
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    
+                    <!-- 1 depth -->
+                    <div id="gnb-t">
+                        <ul>
+                           <li class="active">
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                    </ul>
+                    <div class="admin_pop">
+                        <button class="my_btn">마이페이지</button>
+                        <button class="logout_btn">로그아웃</button>
+                    </div>
+				</div>
+				
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">                     
+                <div class="cont_article">
+                    <div class="cont_left">
+                        <div class="left_tit">Company</div>
+                        <div class="left_cont">
+                            <div class="cont_inputBox">
+                                <input type="text" placeholder="기업명">
+                                <button>조회</button>
+                            </div>
+                            <div class="companyList_box">
+                                <!-- empty 함수 호출 -->
+                                <div class="empty_li"><p>검색결과가 없습니다.</p></div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                                <div class="list_cont">
+                                    <div class="logo"><img src="../images/com_list_icon.png" alt=""></div>
+                                    <div class="center_area">
+                                        <p class="com_name">(주)포스코</p>
+                                        <p class="com_second">
+                                            <span class="type">Type:Cloud</span>
+                                            <span class="chatbot">chatbot:<strong>999</strong></span>
+                                            <span class="date">2020.04.23 11:11</span>
+                                        </p>
+                                    </div>
+                                    <div class="setting_btn"><img src="../images/setting_icon.png" alt=""></div>
+                                </div>
+                                <!-- 1개 반복 -->
+                            </div>
+                            <div class="paging">
+                                <a class="prev most" href="#"><span></span></a>
+                                <a class="prev" href="#"><span></span></a>
+                                <span class="num">
+                                    <a class="num on" href="#">1</a>
+                                    <a class="num" href="#">2</a>
+                                    <a class="num" href="#">3</a>
+                                    <a class="num" href="#">4</a>
+                                    <a class="num" href="#">5</a>
+                                </span>
+                                <a class="next" href="#"><span></span></a>
+                                <a class="next most" href="#"><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont_right">
+                        <!-- 오른쪽 헤더 -->
+                        <div class="container_header">
+                            <div class="chat_header">
+                                <div class="header_left">
+                                    <p>Chatbot : <span class="chat_num">999</span></p>       
+                                    <!-- 1023 보류 -->
+                                    <!-- <select name="" id="">
+                                        <option value="">최신 생성일순</option>
+                                    </select> -->
+                                </div>
+                                <div class="header_center">(주)기업은행 플랫폼 관리자용 챗봇리스트</div>
+                                <div class="header_right">
+                                    <span class="header_type">Type : Cloud</span>
+                                    <button>챗봇등록</button>                                                
+                                </div>
+                            </div>
+                        </div>      
+                        <!-- 오른쪽 헤더 end-->
+                        <div class="right_cont">
+                            <div class="contents">
+                                <div class="cont_chat_sc">                
+                                    <ul class="chatbot-lists">
+                                        <!-- 상단 첫번째 고정 li -->
+                                        <li class="chatbot-item top_fix">
+                                            <div class="chatbot-top">				
+                                                <span class="chatbot-tit">시스템 챗봇</span>				
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>                                    
+                                                </div>                                
+                                            </div>
+                                            <div class="chatbot-bottom">								
+                                                <p class="chatbot-desc">IXOTalk에서 기본적으로<br/>제공하는 시스템봇입니다.</p>                                
+                                            </div>
+                                            <div class="chat_top_img">
+                                                <img src="../images/big_bot.png" alt="챗봇 서비스 명" />
+                                            </div>
+                                        </li>
+                                        <!-- 상단 첫번째 고정 li end -->
+                                        <!-- 예제봇 클래스 : ex_bot -->
+                                        <li class="chatbot-item ex_bot">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <span class="ex_txt">예시봇</span>
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" />
+                                                        <span data-text-before="사용 중지"  data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의<br/>하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <!-- 예시봇 하버 클래스 추가 : ex_hover -->
+                                            <div class="chat_hover ex_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">복제하기</a><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>  
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>                                                 
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">1
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>
+                                        <li class="chatbot-item">
+                                            <div class="chatbot-top">
+                                                <img src="../images/mini_bot.png" alt="챗봇 서비스 명" />
+                                                <div class="chatbot-options">
+                                                    <label for="" class="switch">
+                                                        <input type="checkbox" name="" id="" checked />
+                                                        <span data-text-before="사용 중지" data-text-after="사용 중"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="chatbot-bottom">
+                                                <div class="chatbot-title">더샵 하자보수 봇</div>
+                                                <p class="chatbot-desc">2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다.</p>
+                                                <div class="chatbot-last-date">최종수정일 : 2020.04.23 11:11</div>
+                                            </div>
+                                            <!-- hover되는 영역 -->
+                                            <div class="chat_hover">
+                                                <div class="chatbot_cont">
+                                                    2019년에 완공된 더샵 아파트의 하자보수를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의  를 지원하는 봇입니다. 2019년에 완공된 더 샵 아파트의                            
+                                                </div>
+                                                <div class="cont_btn"><a href="#">챗봇수정</a></div>
+                                                <button>챗봇관리</button>
+                                            </div> 
+                                        </li>                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>  
+                </div>
+			</div>
+            <!-- //#container -->
+
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+		</div>
+        <!-- //#wrapper -->
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/chatbot.js"></script>
+        <script src="../js/common.js"></script>
+        <script>	
+            window.onload = function() {                	
+                empty();	
+                chat_hover();
+            }            	
+            // 추가시 검색결과가 없습니다.	
+            function empty(){	
+                var str = $(".companyList_box .list_cont");	
+                var lenth_li = str.length;	
+                console.log(lenth_li);                	
+                if(lenth_li == 0){	
+                    $(".empty_li").show();	
+                }	
+            }    	
+           
+
+            function chat_hover(){
+                $(".chatbot-item p.chatbot-desc").mouseover(function(){	
+                    $(this).parent().parent().find(".chat_hover").show();	
+                });	
+                $(".chatbot-item").mouseleave(function(){	
+                    $(this).find(".chat_hover").hide();	
+                });
+            }   
+        </script>
+	</body>
+</html>

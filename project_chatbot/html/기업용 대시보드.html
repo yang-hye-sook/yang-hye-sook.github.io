@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>기업용 대시보드</title>    
+        <link rel="stylesheet" href="../css/chatbot.css" />        		
+		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/dashboard.css">  
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- #header -->
+			<div id="header" class="n_hd_com"> <!-- header가 1depth만 있을경우 class="n_hd_com" 를 붙여 준다. -->
+				<div id="header_top" class="company_hd"> <!-- 기업용 레이아웃 -->
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+					
+					<!-- 1 depth -->
+					<div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+					<div class="admin_pop">
+						<button class="my_btn">마이페이지</button>
+						<button class="logout_btn">로그아웃</button>
+					</div>
+				</div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #main -->
+			<main class="main dashboard">
+				<section class="left">
+					<h3 class="page-title">Dashboard</h3>
+					<div class="input-group">
+						<div class="select">
+							<select name="" id="">
+								<option value="기업별 챗봇정보" selected="">전체</option>
+								<option value="기업별 챗봇정보">기업별 챗봇정보</option>
+							</select>
+						</div>
+						<label for="" class="input">
+							<input type="text" class="calendar" placeholder="YYYYMMDD" />
+							<span class="bar">~</span>
+							<input type="text" class="calendar" placeholder="YYYYMMDD" />
+						</label>
+						<div class="input">
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1일</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1주</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>1개월</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>3개월</span>
+							</label>
+							<label for="" class="radio">
+								<input type="radio" name="" id="" />
+								<span>6개월</span>
+							</label>
+						</div>
+						<button type="button" class="button-search-all"><span>조회</span></button>
+					</div>
+					<div class="row">
+						<div class="half color_sky">
+							<div class="half-left">
+								<div class="title">방문자 수 추이</div>
+								<div class="number"><strong>124</strong>건</div>
+								<div class="type">전체</div>
+							</div>
+							<div class="half-right">
+								<canvas id="visitor" height="100"></canvas>
+							</div>
+						</div>
+						<div class="half color_blue">
+							<div class="half-left">
+								<div class="title">대화 수 추이</div>
+								<div class="number"><strong>320</strong>건</div>
+								<div class="type color">전체</div>
+							</div>
+							<div class="half-right">
+								<canvas id="community" height="100"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="quarter eq1">
+							<div class="quarter-text">
+								<div class="title">접속환경</div>									
+							</div>
+							<div class="graph graph_style">
+								<div class="number">
+									<strong>256</strong>건
+									<div class="type color">전체</div>
+								</div>
+								<canvas id="enviroment"></canvas>
+							</div>
+						</div>
+						<div class="quarter color_blue eq2">
+							<div class="quarter-text">
+								<div class="title">질문 이해도</div>
+							</div>
+							<div class="graph graph_style">
+								<div class="number">
+									<strong>456</strong>건
+									<div class="type color">전체</div>
+								</div>
+								<canvas id="understanding" class="understanding_style"></canvas>
+							</div>
+						</div>
+						<div class="quarter eq3 lists">
+							<div class="lists-title">활용도 상위 질문</div>
+							<ol>
+								<li>
+									<a href="#">승진기준문의</a>
+									<span>193건</span>
+								</li>
+								<li>
+									<a href="#">알수 없는 의도</a>
+									<span>107건</span>
+								</li>
+								<li>
+									<a href="#">월급 알아보기</a>
+									<span>24건</span>
+								</li>
+								<li>
+									<a href="#">우리부서휴가자알아보기</a>
+									<span>19건</span>
+								</li>
+								<li>
+									<a href="#">내월급알려줘</a>
+									<span>17건</span>
+								</li>
+							</ol>
+						</div>
+						<div class="quarter eq4 lists">
+							<div class="lists-title">
+								공지사항
+								<div class="link line_more"><a href="#">+</a></div>
+							</div>
+							<ol>
+								<li>
+									<a href="#">긴급 서버 점검 안내</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">5월 첫째주 정기 점검 안내</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">포스코 ICT 챗봇 플랫폼 업데이트</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">연휴 기간 고객센터 운영 안내</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+								<li>
+									<a href="#">긴급 서버 점검 안내</a>
+									<span class="list_date">2020.04.29</span>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!-- #main -->
+
+
+			<!-- footer -->
+			<footer class="footer">
+				<!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+				<div class="footer-inner">
+					<div class="info">
+						<span class="info-title">대표관리자</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(서비스)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(기술)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+				</div>
+			</footer>
+			<!-- /.footer -->
+		</div>
+
+
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/chatbot.js"></script>
+        <script src="../js/chart.min.js"></script>
+		<script>
+			var opt = {
+				legend: {
+					display: false,
+					position: "bottom",
+				},
+				scales: {
+					yAxes: [
+						{
+							ticks: {
+								max: 100,
+								min: 0,
+								stepSize: 50,
+								fontColor: "rgba(255,255,255,0.5)",
+								color: "green",
+								padding: 4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0.5)",
+								zeroLineWidth: 2,
+								zeroLineColor: "rgba(255,255,255,0.5)",
+							},
+						},
+					],
+					xAxes: [
+						{
+							ticks: {
+								fontColor: "rgba(255,255,255,0.5)",
+								padding: -4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0)",
+								zeroLineWidth: 1,
+								zeroLineColor: "rgba(255,255,255,0)",
+								drawOnChartArea: false,
+							},
+						},
+					],
+				},
+				animation: {
+					onComplete: function () {
+						var ctx = this.chart.ctx;
+						ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+						ctx.fillStyle = "#fff";
+						ctx.textAlign = "center";
+						ctx.textBaseline = "bottom";
+
+						this.data.datasets.forEach(function (dataset) {
+							for (var i = 0; i < dataset.data.length; i++) {
+								for (var key in dataset._meta) {
+									var model = dataset._meta[key].data[i]._model;
+									ctx.fillText(dataset.data[i], model.x, model.y - 4);
+								}
+							}
+						});
+					},
+				},
+			};
+			// 방문자 수 추이
+			var visitorData = {
+				labels: ["4.23", "4.24", "4.25", "4.26", "4.27", "4.28", "4.29"],
+				datasets: [
+					{
+						borderColor: "#263e73",
+						borderWidth: 1,
+						fill: false,
+						tension: 0,
+						pointBorderWidth: 2,
+						pointRadius: 4,
+						pointBorderColor: "#fff",
+						pointBackgroundColor: "#4f80e1",
+						data: [75, 35, 76, 55, 60, 85, 35],
+					},
+				],
+			};
+			var vistorCtx = document.getElementById("visitor").getContext("2d");
+			var chart = new Chart(vistorCtx, {
+				type: "line",
+				data: visitorData,
+				options: opt,
+			});
+			// /방문자 수 추이
+			// 대화 수 추이
+			var communityData = {
+				labels: ["4.23", "4.24", "4.25", "4.26", "4.27", "4.28", "4.29"],
+				datasets: [
+					{
+						borderColor: "#b4997b",
+						borderWidth: 1,
+						fill: false,
+						tension: 0,
+						pointBorderWidth: 2,
+						pointRadius: 4,
+						pointBorderColor: "#fff",
+						pointBackgroundColor: "#18274d",
+						data: [25, 15, 26, 21, 23, 34, 17],
+					},
+				],
+			};
+			var communityCtx = document.getElementById("community").getContext("2d");
+			var chart2 = new Chart(communityCtx, {
+				type: "line",
+				data: communityData,
+				options: opt,
+			});
+			// /대화 수 추이
+			// 접속환경
+			var enviromentCtx = document.getElementById("enviroment").getContext("2d");
+			var enviromentData = {
+				labels: ["PC", "Mobile"],
+				datasets: [
+					{
+						data: [150, 106],
+						backgroundColor: ["#c7a780", "#4b505e"],
+						borderColor: ["#c7a780", "#4b505e"],
+						hoverBackgroundColor: ["#c7a780", "#4b505e"],
+						hoverBorderColor: ["#c7a780", "#4b505e"],
+					},
+				],
+			};
+			var chart3 = new Chart(enviromentCtx, {
+				type: "doughnut",
+				data: enviromentData,
+				options: {
+					legend: {
+						position: "left",
+						labels: {
+							fontSize: 12,
+							padding: 10,
+							boxWidth: 4,
+							usePointStyle: true,
+						},
+					},
+					cutoutPercentage: 30,
+					maintainAspectRatio: false,
+					animation: {
+						duration: 500,
+						onComplete: function () {
+							var ctx = this.chart.ctx;
+							ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+							ctx.textAlign = "center";
+							ctx.textBaseline = "bottom";
+
+							this.data.datasets.forEach(function (dataset) {
+								for (var i = 0; i < dataset.data.length; i++) {
+									var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+										total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+										mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+										start_angle = model.startAngle,
+										end_angle = model.endAngle,
+										mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+									var x = mid_radius * Math.cos(mid_angle);
+									var y = mid_radius * Math.sin(mid_angle);
+
+									ctx.fillStyle = "#fff";
+									if (i == 3) {
+										// Darker text color for lighter background
+										// ctx.fillStyle = "#444";
+									}
+									var str = "건";
+									ctx.fillText(dataset.data[i] + str, model.x + x, model.y + y);
+								}
+							});
+						},
+					},
+				},
+			});
+			// /접속환경
+
+			// 질문 이해도
+			var understandingCtx = document.getElementById("understanding").getContext("2d");
+			var understandingData = {
+				labels: ["이해", "이해 못함"],
+				datasets: [
+					{
+						backgroundColor: ["#f9f9f9", "#c7a780"],
+						borderColor: ["#f9f9f9", "#c7a780"],
+						barThickness: 30,
+						data: [243, 125],
+					},
+				],
+			};
+			var opt2 = {
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [
+						{
+							ticks: {
+								max: 300,
+								min: 0,
+								stepSize: 100,
+								fontColor: "rgba(255,255,255,0.5)",
+								color: "green",
+								padding: 4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0.5)",
+								zeroLineWidth: 2,
+								zeroLineColor: "rgba(255,255,255,0.5)",
+							},
+						},
+					],
+					xAxes: [
+						{
+							ticks: {
+								fontColor: "rgba(255,255,255,0.5)",
+								padding: -4,
+							},
+							gridLines: {
+								color: "rgba(255,255,255,0)",
+								zeroLineWidth: 1,
+								zeroLineColor: "rgba(255,255,255,0)",
+								drawOnChartArea: false,
+							},
+						},
+					],
+				},
+				animation: {
+					onComplete: function () {
+						var ctx = this.chart.ctx;
+						ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, "normal", Chart.defaults.global.defaultFontFamily);
+						ctx.fillStyle = "#fff";
+						ctx.textAlign = "center";
+						ctx.textBaseline = "bottom";
+
+						this.data.datasets.forEach(function (dataset) {
+							for (var i = 0; i < dataset.data.length; i++) {
+								for (var key in dataset._meta) {
+									var model = dataset._meta[key].data[i]._model;
+									ctx.fillText(dataset.data[i], model.x, model.y - 4);
+								}
+							}
+						});
+					},
+				},
+			};
+			var chart4 = new Chart(understandingCtx, {
+				type: "bar",
+				data: understandingData,
+				options: opt2,
+			});
+			// /질문 이해도
+		</script>
+	</body>
+</html>

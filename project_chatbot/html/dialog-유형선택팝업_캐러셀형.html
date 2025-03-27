@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/builder-ui.css" /> <!-- builde 관련 css-->
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/builder-ui.js"></script> <!-- builde 관련 js-->
+		
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header">
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+			</div>
+			<!-- //#container -->
+
+		</div>
+		<!-- //#wrapper -->
+
+	
+
+		
+
+
+
+		<!-- 케러셀 유형  popup -->
+		<div class="pop_layer wide" id="chatTypeCarousel" style="display: block;">
+			<div class="pop_title_area">
+				<div class="pop_title_inner">
+					<button type="button" class="btn1">유형 재선택</button>
+					<h1 class="pop_title">Custom 제작
+						<button type="button" class="btn1">메뉴얼</button>
+					</h1>
+					<div class="btn_wrap">
+						<button type="button" class="btn1">JSON Viewer</button>
+						<button type="button" class="btn1">답변유형등록</button>
+					</div>
+				</div>
+			</div>
+			<div class="pop_container">
+				<div class="tem_form_wrap">
+
+					<div class="left">
+						<ul class="cal_list">
+							<li>
+								<div class="title_area">
+									<h2>1번카드</h2>
+									<div class="left_side">
+										<button type="button" class="btn2 sm btn_delCarousel disabled">삭제</button>
+									</div>
+									<div class="right_side">
+										<button type="button" class="btn2 sm btn_addCarousel">캐로셀추가</button>
+									</div>
+								</div>
+
+								<div class="md_box">
+									<div class="md_left">
+										<div class="tit_area">
+											<p class="tit">텍스트 Module</p>
+											<span class="tooltip">
+												<i></i>
+												<div class="tooltip_txt">
+													<p>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사가나다라</p>
+												</div>
+											</span>
+										</div>
+										<textarea name="" id="" value="@선택카드_종류  에 대한 답변입니다." style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
+									</div>
+									<div class="md_right">
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>엔티티</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>질의어</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>사용자정보</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>Json Response</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="md_box">
+									<div class="tit_area">
+										<p class="tit">이미지 Module</p>
+										<span class="tooltip">
+											<i></i>
+											<div class="tooltip_txt">
+												<p>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사가나다라</p>
+											</div>
+										</span>
+									</div>
+									<div class="img_area">
+										<img src="../img/img_temp.jpg" alt="">
+									</div>
+									
+									<div class="desc_text">
+										이미지 형식 : jpg, png,jpeg, bmp, svg<br>
+										이미지 권장 사이즈 : 150px×150px
+									</div>
+									<p class="desc_text">이미지를 직접 선택하거나 이미지 URL을 입력할 수 있습니다.</p>
+									<ul class="enroll_info">
+										<li class="sel_file">
+											<select name="" class="type-selector">
+												<option value="fileUpload">이미지 업로드</option>
+												<option value="urlUpload">이미지 URL 등록</option>
+											</select> 
+											<!-- 201102 수정 -->
+											<div class="upload-box fileUpload">
+												<input type="file" id="uploadFile" class="upload-hidden">
+												<label for="uploadFile">파일선택</label>
+												<input class="upload-name" value="" disabled="disabled" style="width: 100px;">
+												<button class="file-remover" type="button" style="display:none;">삭제</button>
+											</div>
+											<!-- <input type="file" name="" id="upload1" class="fileUpload" style="width: 100%;"> -->
+											<input type="text" name="" id="upload2" class="urlUpload" placeholder="이미지 URL을 입력하세요" style="width: 198px;">
+										</li>
+										<li class="link">
+											<label for="golink2">링크 URL</label>
+											<input type="text" name="" id="golink2" placeholder="클릭 시 이동할 URL 주소 입력" style="width: 100%;">
+										</li>
+										<li class="link">
+											<label for="imgDesc">이미지 설명문구</label>
+											<textarea id="imgDesc" name="" id="" placeholder="설명을 입력해 주세요. ( 최대 50글자 이내)" style="width: 100%;"></textarea>
+										</li>
+									</ul>
+								</div>
+
+								<div class="md_box">
+									<div class="tit_area">
+										<p class="tit">버튼 Module</p>
+										<span class="tooltip">
+											<i></i>
+											<div class="tooltip_txt">
+												<p>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사<br>가나다라 마바사가나다라 마바사 가나다라 마바사가나다라</p>
+											</div>
+										</span>
+									</div>
+
+									<ul class="enroll_info type2">
+										<li>
+											<input type="text" name="" id="" placeholder="내용을 입력하세요." style="width: 100%;">
+										</li>
+										<li>
+											<select name="" class="type-selector">
+												<option value="action">액션 선택</option>
+												<option value="connect">의도연결</option>
+												<option value="cancel">취소답변</option>
+												<option value="weblink">웹링크</option>
+											</select>
+											<input type="text" name="" class="action" style="width: 234px;"> 
+											<div class="dropdown_box connect" style="display: none;">
+												<a href="#"><span>의도연결 List</span></a>
+												<div id="intentList" class="dropDown">
+													<a href="#">의도연결 List</a>
+													<a href="#">의도연결 List</a>
+													<a href="#">의도연결 List</a>
+												</div>
+											</div>
+											<input type="text" name="" class="cancel" style="width: 234px;display: none;"> 
+											<input type="text" name="" class="weblink" style="width: 234px;display: none;"> 
+										</li>
+									</ul>
+									<div class="paramit dp_block">
+										<ul>
+											<li>
+												<p class="s_tit"><span>파라미터</span></p>
+												<div class="db_inline">
+													<select class="type-selector">
+														<option value="">선택안함</option>
+														<option value="entity">Entity</option>
+														<option value="jsonResponse">Json Response</option>
+														<option value="string">Text</option>
+													</select>
+													<div class="dropdown_box entity" style="display: none;">
+														<a href="#"><span>Entity List</span></a>
+														<div id="intentList" class="dropDown">
+															<a href="#">Entity List</a>
+															<a href="#">Entity List</a>
+															<a href="#">Entity List</a>
+														</div>
+													</div>
+													<div class="dropdown_box jsonResponse" style="display: none;">
+														<a href="#"><span>JsonResponse List</span></a>
+														<div id="intentList" class="dropDown">
+															<a href="#">JsonResponse List</a>
+															<a href="#">JsonResponse List</a>
+															<a href="#">JsonResponse List</a>
+														</div>
+													</div>
+													<input type="text" name="" class="string" style="width: 130px;display: none;">
+												</div>
+												<button type="button" class="btn2 sm btn_delete"><span>삭제</span></button>
+												<button type="button" class="btn2 sm btn_add"><span>추가</span></button>
+												
+											</li>
+										</ul>
+									</div>
+									
+									<div class="input_wrap mt05">
+										<input type="checkbox" name="" id="chkBtn">
+										<label for="chkBtn" class="label_mg">텍스트 버튼</label>
+										<input type="checkbox" name="" id="rightLeftBtn">
+										<label for="rightLeftBtn">좌우 버튼</label>
+									</div>
+								</div>	
+							</li>
+						</ul>
+					</div>
+
+					<div class="right">
+						<div class="iframe_wrap">
+							<p class="tit">
+								<button type="button" class="btn_represh"><span>미리보기</span></button>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+
+			<button type="button" class="pop_close">닫기</button>
+		</div>
+		
+		
+
+	</body>
+</html>

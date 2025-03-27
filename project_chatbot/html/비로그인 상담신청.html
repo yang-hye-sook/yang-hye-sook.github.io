@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>비로그인 상담신청</title>
+        <link rel="stylesheet" href="../css/consulting.css" />  
+        <link rel="stylesheet" href="../css/common.css" />  
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #container -->
+			<div id="container">
+                <div class="cotent_top">
+                    <img src="../images/consulting_logo.png" alt="로고">
+                    <p>상담신청</p>
+                </div>
+                <div class="cotent_bot">
+                    <div class="cont_box">
+
+                        <div class="agree_list">         
+                            <div class="agreeBox"> 
+                                <input type="checkbox" id="ck_agree">
+                                <label for="ck_agree">개인(신용)정보 수집 · 이용 동의 (필수)</label>
+                            </div>
+                            <div class="agree_terms">
+                                <p>
+                                    본 약관은 다양한 포스코ICT 챗봇 서비스의 이용과 관련하여 포스코ICT 챗봇 서비스를 제공하는 포스코ICT 챗봇 주식화사 (이하 '포스코
+                                    챗봇') 와 이를 이용하는 포스코ICT 챗봇 서비스 회원(이하 '회원' ) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 포스코ICT 챗봇 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다. 
+                                    본 약관은 다양한 포스코ICT 챗봇 서비스의 이용과 관련하여 포스코ICT 챗봇 서비스를 제공하는 포스코ICT 챗봇 주식화사 (이하 '포스코
+                                    챗봇') 와 이를 이용하는 포스코ICT 챗봇 서비스 회원(이하 '회원' ) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 포스코ICT 챗봇 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다. 
+                                </p>
+                            </div>
+                            <div class="message show error">필수 약관에 동의 바랍니다.</div>
+                        </div>
+
+                        <div class="list_table">
+                            <table>
+                                <caption>
+                                    상담 확인 및 답변 입력 폼
+                                </caption>
+                                <tbody>
+                                    <tr class="border_bottom">
+                                        <th scope="row">이름</th>
+                                        <td>
+                                            <input type="text" maxlength="20"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_bottom">
+                                        <th scope="row">휴대전화</th>
+                                        <td>
+                                            <input type="text" class="onlyNumber"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_bottom">
+                                        <th scope="row">이메일</th>
+                                        <td>
+                                            <input type="text"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_bottom">
+                                        <th scope="row">상담구분</th>
+                                        <td>
+                                            <div class="select">
+                                                <select name="" id="">
+                                                    <option value="서비스 신청">서비스 신청</option>
+                                                    <option value="서비스 문의">서비스 문의</option>
+                                                    <option value="불편사항">불편사항</option>
+                                                    <option value="개선사항">개선사항</option>
+                                                </select>
+                                            </div>
+                                            <div class="message show error">필수 입력 정보입니다.</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border_bottom">
+                                        <th scope="row">제목</th>
+                                        <td>
+                                            <input type="text" maxlength="100"/>
+                                            <div class="message show error">필수 입력 정보입니다.</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">내용</th>
+                                        <td>
+                                            <textarea class="textarea" name="" id="" rows="6" maxlength="2000"></textarea>
+                                            <div class="message show error">필수 입력 정보입니다.</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="agree_notice">
+                            <ul>
+                                <li><span></span>답변은 2~3일 안에 메일을 통해 전달해 드립니다.</li>
+                                <li><span></span>서비스와 관련이 없거나, 부적절한 내용이 포함된 경우에는 별도의 고지 없이 상담내용이 삭제됩니다.</li>
+                            </ul>
+                        </div>
+
+                        <button class="con_btn">등록</button>
+                        
+                    </div>
+                </div>                
+			</div>
+			<!-- //#container -->
+
+		</div>
+        <!-- //#wrapper -->
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/chatbot.js"></script>
+        <!-- <script src="../js/common.js"></script> -->
+        <script>
+            
+            // 휴대전화 입력시
+            $('.onlyNumber').keydown(function(event) {
+                var key = event.charCode || event.keyCode || 0;
+                $text = $(this);
+                if (key !== 8 && key !== 9) {
+                    if ($text.val().length === 3) {
+                        $text.val($text.val() + '-');
+                    }
+                    if ($text.val().length === 8) {
+                        $text.val($text.val() + '-');
+                    }
+                }            
+                return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));          
+            });
+
+
+
+
+        </script>
+	</body>
+</html>

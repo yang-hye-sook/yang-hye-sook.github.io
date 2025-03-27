@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>로그인 화면</title>
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="login_wrapper">
+			<div class="left_area">
+				<div class="councel">
+					<dl class="councel_text">
+						<dt>이제 기업용 <strong>챗봇 솔루션</strong>은 <strong>IXOTalk</strong> 입니다.</dt>
+						<dd>AI 기술 기반의  'IXOTalk'은 음성 봇 (VORis)이나<br />
+							업무자동화 솔루션 (a.works)과 결합하여 당신을 업계 1위로 이끕니다.</dd>
+					</dl>
+					<div class="img">
+						<img src="../images/img_solution.png" alt=" 마케팅,회계재무,고객서비스,조직관리,공급망관리,인사노무에 관한 이미지">
+					</div>
+					<div class="btn_wrap">
+						<a href="#" class="btn_councel">
+							<span>상담신청</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="right_area">
+				<div class="login_form">
+					<h1 class="logo">IXOTalk</h1>
+					<div class="login_form_box">
+						<form id="" method="post">
+							<fieldset>
+								<legend>아이디, 비밀번호 로그인 입력 폼</legend>
+								<ul class="inp_box">
+									<li>
+										<label for="inputId">
+											<input type="text" name="" id="inputId" placeholder="아이디를 입력하세요" autofocus>
+										</label>
+									</li>
+									<li>
+										<label for="inputPw">
+											<input type="password" name="" id="inputPw" placeholder="비밀번호를 입력하세요" autofocus>
+										</label>
+									</li>
+									
+								</ul>
+								<div class="save_id">
+									<input type="checkbox" name="" id="saveId">
+									<label for="saveId">아이디 저장</label>
+								</div>
+								<div class="btn_wrap">
+									<button type="button" class="btn_login">
+										<span>Login</span>
+									</button>
+								</div>
+								<div class="sub_area">
+									<a href="#">회원가입</a>
+									<a href="#">비밀번호 찾기</a>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.wrapper -->
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/chatbot.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#inputId').focus();
+			});
+		</script>
+	</body>
+</html>

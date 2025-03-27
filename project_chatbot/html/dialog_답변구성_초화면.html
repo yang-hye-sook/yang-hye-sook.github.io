@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/builder-ui.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+		
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper" class="bg_type01">
+			<!-- #header -->
+			<div id="header" class="header-type-b">
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+					
+					<!-- 1 depth -->
+					<div id="gnb-t">
+                        <ul>
+                           <li class="active">
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+					<div class="admin_pop">
+						<button class="my_btn">마이페이지</button>
+						<button class="logout_btn">로그아웃</button>
+					</div>
+
+
+					<!-- 2 depth -->
+					<div id="gnb">
+						<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+						<ul>
+							<li>
+								<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Intents_List.html').show(); return false;"><span>Intents</span></a>
+							</li>
+							<li>
+								<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('MyEntity_List.html').show(); return false;"><span>Entities</span></a>
+								<ul>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('MyEntity_List.html').show(); return false;"><span>My Entity</span></a>
+									</li>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('System_List_IT.html').show(); return false;"><span>System</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#n" onclick="$('#left').empty().load('Dialog_Tree.html').show(); $('#full').empty().hide(); $('#center').empty().load('Dialog_noplan.html'); return false;"><span>Dialog</span></a>
+							</li>
+							<!-- <li>
+								<a href="#n" onclick="$('#left').empty().load('Dialog_Tree.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Dialog</span></a>
+							</li> -->
+							<li>
+								<a href="#n" onclick="$('#center').empty().load('configuration.html').show(); $('#full').empty().hide(); $('#left').empty().hide(); return false;"><span>configuration</span></a>
+							</li>
+							<li>
+								<a href="#n" onclick="$('#left').empty().load('Interactive_Testbot.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Test &amp; Publishing</span></a>
+								<ul>
+									<li>
+										<a href="#n" onclick="$('#left').empty().load('Interactive_Testbot.html').show(); $('#full').empty().hide(); $('#center').empty().hide(); return false;"><span>Interactive Test</span></a>
+									</li>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Batch_Test.html').show(); return false;"><span>Batch Test</span></a>
+									</li>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Publishing.html').show(); return false;"><span>Publishing</span></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().show(); return false;"><span>Template</span></a>
+							</li>
+							<li>
+								<a href="#n" onclick="$('#full').empty().load('Dashboard.html').show();; return false;"><span>Log Monitoring</span></a>
+								<ul>
+									<li>
+										<a href="#n" onclick="$('#full').empty().load('Dashboard.html').show(); return false;"><span>Dashboard</span></a>
+									</li>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Log_Watcher.html').show(); return false;"><span>Log Watcher</span></a>
+									</li>
+									<li>
+										<a href="#n" onclick="$('#left').empty().hide(); $('#full').empty().hide(); $('#center').empty().load('Log_Manager.html').show(); return false;;"><span>Log Manager</span></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+
+				<!-- 3 depth -->
+				<div id="depth2_bar"></div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+
+				<!-- #left -->
+				<div id="left"></div>
+				<!-- //#left -->
+				<script>
+					$("#left").load("Dialog_Tree.html");
+				</script>
+
+				<!-- #center -->
+				<div id="center">
+					<div id="content">
+						<div class="no_plan_wrap">
+							<p>의도별 챗봇 대화 답변을 등록합니다.</p>
+							<dl>
+								<dt>+ 대화 답변이란 ?</dt>
+								<dd>
+									사용자가 챗봇에 질문을 했을 때, 챗봇은 그 질문에 적합한 답변을 해주어야 합니다.<br> 
+									각 의도에 따라 답변을 등록해두면, 사용자의 질문 내용에 따라 답변이 보여지게 됩니다. <br> 
+									왼쪽의 의도 목록에서 답변을 설정할 의도를 선택해주세요. 
+								</dd>
+							</dl>
+							<dl>
+								<dt>+ 의도 목록이 없나요?  </dt>
+								<dd>의도 추가 버튼을 클릭해 먼저 의도 추가부터 해주세요. </dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!-- //#center -->
+				
+			</div>
+			<!-- //#container -->
+
+		</div>
+		<!-- //#wrapper -->
+
+	</body>
+</html>
