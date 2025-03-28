@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/builder-ui.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/multiselect.min.js"></script> <!-- multi select js-->
+		<script>
+			$(document).ready(function($) {
+		
+				$('#multiselect').multiselect();
+				
+				// tab
+				$('.tab_type02 li a').click(function() {
+					var activeTab = $(this).parent().attr('data-tab');
+					$('.tab_type02 li').removeClass('active');
+					$('.tab_cont').removeClass('active');
+					$(this).parent().addClass('active');
+					$('#' + activeTab).addClass('active');
+				});
+		
+		
+		
+				// 라디오 버튼 클릭시
+				$(".change_data li input:radio").change(function(){
+					var className = $(this).val();
+					$(this).parent().parent().siblings().hide();
+					$(this).parent().parent().siblings().each(function() {
+						if ($(this).hasClass(className)) {
+							$(this).show();
+						}else {
+							$(this).hide();
+						}
+					});
+				});
+		
+		
+				// Header 삭제
+				$(document).on('click','.btn_headDelete', function(e) {
+					e.preventDefault();
+					$(this).parent().parent().remove();
+				});
+		
+				// Header 추가
+				$(document).on('click','.btn_headAdd', function(e) {
+					e.preventDefault();
+					var listTable = $(this).parent().siblings('table');
+					var tr = $(listTable).find('tbody tr').first();
+					var cloneTr = $(tr).clone();
+					$(cloneTr).find('input').val('');
+					$(listTable).append(cloneTr);
+				});
+		
+			});
+		</script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper" class="bg_type01"> <!-- Api 등록시 배경색이 달라 클래스 추가 해 줄것!!-->
+			 <!-- #header -->
+			 <div id="header" class="header-type-b"> <!-- 2depth 메뉴만 있을 경우 class="header-type-b"  붙여줄것  / title , util 없음 -->
+				<div id="header_top">
+					<span class="logo"><a href="#n"
+							onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+							the Great | 챗봇관리자</a></span>
+	
+					<!-- 1 depth -->
+					<div id="gnb-t">
+						<ul>
+							<li class="active">
+								<a href="#">챗봇</a>
+							</li>
+							<li>
+								<a href="#">매뉴얼</a>
+							</li>
+							<li>
+								<a href="#">고객관리</a>
+							</li>
+							<li>
+								<a href="#">공지</a>
+							</li>
+							<li>
+								<a href="#">상담</a>
+							</li>
+						</ul>
+					</div>
+	
+					<ul class="info">
+						<li>
+							<span class="ic_user">
+								<i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+								홍길동
+							</span>
+						</li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+					<div class="admin_pop">
+						<button class="my_btn">마이페이지</button>
+						<button class="logout_btn">로그아웃</button>
+					</div>
+
+					<!-- 2 depth -->
+					<div id="gnb">
+						<ul>
+							<li>
+								<a href="#n"><span>Intents</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Entities</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Dialog</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Test & Publishing</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Log Monitoring</span></a>
+							</li>
+							<li class="active">
+								<a href="#n"><span>Configuration</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container" class="api_wrap"> <!--configuation > api등록할때 이 클래스 붙여 줄것!!!-->
+				<!-- #center -->
+				<div id="contents">  
+					<div class="center-in">
+						<div class="btns_bar">
+							<div class="fl">
+								<button type="button" class="btn1">저장</button>
+								<button type="button" class="btn1">취소</button>
+							</div>
+							<div class="fr">
+								<button type="button" class="btn1">API 복사</button>
+							</div>
+						</div>
+						<h3 class="ss_tit mt00">API 개요</h3>
+						<div class="config_item_box">
+							<ul class="form_list">
+								<li>
+									<label for="apiName">API 명</label>
+									<p><input type="text" name="" id="apiName" placeholder="용어검색_완전일치_봇쿼리" style="width: 100%;"></p>
+								</li>
+								<li>
+									<label for="apiDesc">API 설명</label>
+									<textarea id="apiDesc" placeholder="본 API는 용도설정을 위해 사용하는 API입니다.&#13;&#10; API 필드는 최대 3줄을 입력할 수 있습니다.&#13;&#10;관련된 엔티티로는 가나다라가 있으며, 해당 엔티티의 사양에 관련한 문의는 홍길동 사원에게 문의하면 됩니다." style="width: 100%;height:80px;"></textarea>
+								</li>
+							</ul>
+						</div>
+						
+					
+						<h3 class="ss_tit">Request</h3>
+						<div class="config_item_box">
+							<div class="mb15">
+								<select name="" id="" style="width: 168px;">
+									<option value="">GET</option>
+									<option value="">POST</option>
+									<option value="">PUT</option>
+									<option value="">DELETE</option>
+								</select> 
+								<input type="text" name="" id="" style="width: calc(100% - 174px);margin-right: 0;">
+							</div>
+					
+							<ul class="tab_type02">
+								<li class="active" data-tab="tabCont1"><a href="#">Header</a></li>
+								<li data-tab="tabCont2"><a href="#">Body</a></li>
+							</ul>
+					
+							<div class="tab_cont active" id="tabCont1">
+								<table class="tb_style" style="width: 100%;">
+									<colgroup>
+										<col style="width:164px">
+										<col style="*">
+										<col style="width:110px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">key</th>
+											<th scope="col">Value</th>
+											<th scope="col">Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<input type="text" name="" id="" placeholder="content-Type" style="width: 100%;">
+											</td>
+											<td>
+												<input type="text" name="" id="" style="width: 100%;">
+											</td>
+											<td>
+												<button type="button" class="btn2 btn_headDelete">Header 삭제</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="btn_wrap ta_c mt10">
+									<button type="button" class="btn1 btn_headAdd">Header 추가</button>
+								</div>
+							</div>
+					
+							<div class="tab_cont" id="tabCont2">
+								<div class="change_data">
+									<ul>
+										<li>
+											<input type="radio" id="rawData" name="data" value="raw_data" checked>
+											<label for="rawData" class="label_mg">Raw Data</label>
+										</li>
+										<li>
+											<input type="radio" id="formData" name="data" value="form_data">
+											<label for="formData">Form Data </label>
+										</li>
+									</ul>
+									<div class="data_cnt raw_data">
+										<textarea name="" id="" style="width: 100%;"></textarea> 
+									</div>
+						
+									<div class="form_data" style="display: none;">
+										<table class="tb_style" style="width: 100%;">
+											<colgroup>
+												<col style="width:164px">
+												<col style="*">
+												<col style="width:115px">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">Key</th>
+													<th scope="col">Value</th>
+													<th scope="col">Delete</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<input type="text" name="" id="" placeholder="content-Type" style="width: 100%;">
+													</td>
+													<td>
+														<input type="text" name="" id="" style="width: 100%;">
+													</td>
+													<td>
+														<button type="button" class="btn2 sm btn_headDelete">Body 삭제</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<input type="text" name="" id="" placeholder="content-Type" style="width: 100%;">
+													</td>
+													<td>
+														<input type="text" name="" id="" style="width: 100%;">
+													</td>
+													<td>
+														<button type="button" class="btn2 sm btn_headDelete">Body 삭제</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="btn_wrap ta_c mt10">
+											<button type="button" class="btn1 sm btn_headAdd">Body 추가</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<h3 class="ss_tit">Response</h3>
+						<div class="config_item_box">
+							<textarea name="" id="" style="width:100%;" class="form_txtControl"></textarea> 
+						</div>
+					
+						<h3 class="ss_tit">Registration</h3>
+						<div class="config_item_box">
+							<ul class="form_list">
+								<li>
+									<label for="className">참조 클래스명</label>
+									<input type="text" name="" id="className" placeholder="참조 클래스명을 입력해 주십시오." style="width: 100%;">
+								</li>
+								<li>
+									<label for="reponseNo">예외 응답</label>
+									<textarea name="" id="reponseNo"  class="form_txtControl" placeholder="용어사전 서버가 응답하지 않습니다. 잠시 후 이용바랍니다." style="width: 100%;"></textarea>
+								</li>
+							</ul>
+						</div>
+					
+						<h3 class="ss_tit">챗봇 사용 설정</h3>
+						<div class="config_item_box">
+							<div class="multi_select_wrap">
+								<div class="multi_select">
+									<p>미사용 챗봇</p>
+									<select name="from[]" id="multiselect" class="form-control" size="8" multiple="multiple">
+										<option value="1">Item 1</option>
+										<option value="2">Item 2</option>
+										<option value="3">Item 3</option>
+										<option value="4">Item 4</option>
+										<option value="5">Item 5</option>
+									</select>
+								</div>
+								
+								<div class="btn_wrap">
+									<button type="button" id="multiselect_rightSelected" class="btn2 sm">
+										사용<i class="arrow-right"></i>
+									</button>
+									<button type="button" id="multiselect_leftSelected" class="btn2 sm">
+										<i class="arrow-left"></i>미사용
+									</button>
+								</div>
+								
+								<div class="multi_select">
+									<p>사용 챗봇</p>
+									<select name="to[]" id="multiselect_to" class="form-control" size="8" multiple="multiple"></select>
+								</div>
+							</div>
+						</div>
+					
+						<h3 class="ss_tit">챗봇 사용 설정</h3>
+						<div class="config_item_box">
+							<input type="radio" id="useYes" name="use">
+							<label for="useYes" class="label_mg">사용</label>
+							<input type="radio" id="useNo" name="use">
+							<label for="useNo">미사용</label>
+						</div>
+					</div>
+				</div>
+				<!-- //#center -->
+
+			</div>
+			<!-- //#container -->
+
+			<!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

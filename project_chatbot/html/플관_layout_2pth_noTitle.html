@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>플랫폼 관리자 2depth 메뉴 타이틀 없는 레이아웃</title>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="shorcut icon" href="../images/chatbot.ico" type="image/x-icon" />
+	<link rel="icon" href="../images/chatbot.ico" type="image/x-icon" />
+	<script src="../js/jquery-1.12.4.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<!-- #wrapper -->
+	<div id="wrapper">
+		<!-- #header -->
+		<div id="header" class="header-type-b"> <!-- 2depth 혹은 3depth 메뉴가 있을 경우인데  title , util 없을때 class="header-type-b"  붙여줄것  /  -->
+			<div id="header_top">
+				<span class="logo"><a href="#n"
+						onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+						the Great | 챗봇관리자</a></span>
+				
+				<!-- 1 depth -->
+				<div id="gnb-t">
+					<ul>
+						<li>
+							<a href="#">챗봇</a>
+						</li>
+						<li>
+							<a href="#">매뉴얼</a>
+						</li>
+						<li>
+							<a href="#">고객관리</a>
+						</li>
+						<li class="active">
+							<a href="#">공지</a>
+						</li>
+						<li>
+							<a href="#">상담</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="info">
+					<li>
+						<span class="ic_user">
+							<i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+							홍길동
+						</span>
+					</li>
+					<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+				</ul>
+				<div class="admin_pop">
+					<button class="my_btn">마이페이지</button>
+					<button class="logout_btn">로그아웃</button>
+				</div>
+			</div>
+
+			<!-- 2 depth -->
+			<div id="gnb">
+				<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+				<ul>
+					<li>
+						<a href="#n"><span>기업관리</span></a>
+					</li>
+					<li class="active">
+						<a href="#n"><span>회원관리</span></a>
+					</li>
+				</ul>
+			</div>
+			<div id="util">
+				<a href="#n" class="ic_setting">설정</a>
+				<a href="#n" class="ic_test" onclick="$('#right').show(); return false;">학습 테스트</a>
+			</div>
+		</div> 
+		<!-- //#header -->
+
+		<!-- #container -->
+		<div id="container">
+			<!-- content -->
+			<div id="contents">
+				<!-- sub title -->
+				<div class="tit-area">
+					<p class="tit-sec">공지사항</p>
+				</div>
+				<!-- 컨텐츠 영역 -->
+				<div></div>
+
+			</div>
+			<!-- // content -->
+
+			<!-- #full -->
+			<div id="full" style="display: none;"></div>
+			<!-- //#full -->
+
+			<script>
+				var intentsList = ["ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㄱㄱ", "ㄴㄴ", "ㄷㄷ", "ㄹㄹ", "가", "나", "다", "라", "가나",
+					"다라", "마바", "사아", "자차", "카타", "파하", "가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"
+				]; //의도 목록
+				for (i = 0; i < 1000; i++) intentsList.push("가나다라마바사"); //테스트용
+				var entitiesList = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅌ", "ㅋ", "ㅍ", "ㅎ", "ㄱㄱ", "ㄴㄴ", "ㄷㄷ", "ㄹㄹ",
+					"가", "나", "다", "라", "가나", "다라", "마바", "사아", "자차", "카타", "파하"
+				]; //개체 목록
+
+				(function () {
+					/* ---------- DataTables ---------- */
+
+					function fullScrollTableSet() {
+						//세로로 꽉 차는 scrollBody 만들기
+						var $tbody = $(".dataTables_scrollBody_full");
+						$tbody.each(function () {
+							var $tWrap = $(this).closest(".dataTables_wrapper");
+							var $this = $(this);
+							var spaceHeight = $("#container").height() - $tWrap.position().top - ($this.offset().top -
+								$tWrap.offset().top) - 20;
+							var minHeight = 200;
+							$this.css("max-height", Math.max(spaceHeight, minHeight));
+							this.api.columns.adjust(); //window.resize 외의 요소로 스크롤바 show/hide에 따른 DataTables 칼럼 폭 리사이즈
+						});
+					}
+					$(document).on("init.dt", function (e, settings) {
+						//테이블 생성할 때 옵션 'scrollY' 값이 '0'이면 'fullScrollTable'
+						var api = new $.fn.dataTable.Api(settings);
+						if (settings.nScrollBody && settings.nScrollBody.clientHeight == 0) {
+							$(settings.nScrollBody).addClass("dataTables_scrollBody_full");
+							$(settings.nScrollBody)[0].api = api;
+						}
+						fullScrollTableSet();
+					});
+					$(window).resize(function () {
+						fullScrollTableSet();
+					});
+					$(document).on("show hide", ".searched_info", function () {
+						fullScrollTableSet();
+					});
+
+					/* ---------- .dt-editor-input ---------- */
+					$(document).on("click", ".dt-editor-input", function () {
+						if (!$(this).hasClass("active")) {
+							var $selected = $(this);
+							$selected.addClass("active");
+							var string = $selected.text();
+							var $input = $('<input type="text">');
+							$selected.html($input);
+							$input.focus().val(string);
+							$(window).trigger("resize");
+
+							$input.bind("focusout keydown", function (e) {
+								if (e.type == "focusout" || e.keyCode == 13) {
+									$selected.html($(this).val()).removeClass("active");
+									$(window).trigger("resize");
+								}
+							});
+						}
+					});
+
+					/* ---------- .dt-editor-multiple ---------- */
+					$(document).on("click", ".dt-editor-multiple", function () {
+						if (!$(this).hasClass("input_list_wrap")) {
+							var $selected = $(this);
+							$selected.addClass("input_list_wrap");
+							var $box;
+							var $input;
+							var $removeBtn;
+							var $items = [];
+							var $span = $selected.find("span");
+							for (i = 0; i < $span.length; i++) {
+								$box = $("<span>", {
+									class: "input_list_item"
+								});
+								$input = $("<input>", {
+									type: "text"
+								}).val($span.eq(i).text());
+								$removeBtn = $("<button>")
+									.text("삭제")
+									.click(function () {
+										$(this).closest(".input_list_item").remove();
+										$(window).trigger("resize");
+									});
+								$items.push($box.append($input).append($removeBtn));
+							}
+							var $maker = $("<input>", {
+								type: "text",
+								class: "input_list_item_maker",
+								placeholder: "유의어를 입력해 주십시오."
+							}).keydown(function (e) {
+								if (e.keyCode == 13 && $(this).val().replace(/\s/g, "").length > 0) {
+									var $box = $("<span>", {
+										class: "input_list_item"
+									});
+									var $input = $("<input>", {
+										type: "text"
+									}).val($(this).val());
+									var $removeBtn = $("<button>")
+										.text("삭제")
+										.click(function () {
+											$box.remove();
+											$(window).trigger("resize");
+										});
+									$box.append($input).append($removeBtn).insertBefore($(this));
+									$maker.val("");
+									setTimeout(function () {
+										$maker.focus();
+									}, 0); //추가 중 스크롤이 발생했을 때 브라우저의 scrollTop 회귀를 막는다.
+									$(window).trigger("resize");
+								}
+							});
+							$items.push($maker);
+							$selected.html($items);
+							setTimeout(function () {
+								$maker.focus();
+							}, 0);
+							$(window).trigger("resize");
+						}
+					});
+
+					$(document).bind("click", function (e) {
+						var $clearTarget = $(".dt-editor-multiple.input_list_wrap");
+						$clearTarget.each(function () {
+							var $this = $(this);
+							var box = $this.offset();
+							box.right = box.left + $(this).outerWidth();
+							box.bottom = box.top + $(this).outerHeight();
+							if (!(box.left <= e.pageX && e.pageX <= box.right && box.top <= e.pageY && e
+									.pageY <= box.bottom)) {
+								var $content = $("#content");
+								console.log(e.target.id);
+								if (e.target.className == "dataTables_scrollBody" || ((e.target.id ==
+											"center" || e.target.id == "full") && e.pageX > $content.offset()
+										.left + $content.outerWidth())) {
+									return; //스크롤바 클릭은 제외
+								}
+								var $items = [];
+								var $input = $this.find(".input_list_item>input[type=text]");
+								for (i = 0; i < $input.length; i++) $items.push($("<span>").text($input.eq(i)
+									.val()));
+								setTimeout(function () {
+									$this.html($items).removeClass("input_list_wrap");
+									$(window).trigger("resize");
+								}, 0);
+							}
+						});
+					});
+
+					/* ---------- .dt-editor-autocomplete ---------- */
+					var $content;
+					var $selectedInput;
+
+					/* 선택창 활성화 */
+					$(document).on("click", ".dt-editor-autocomplete>input[type=text]", function () {
+						if (!$selectedInput) {
+							$selectedInput = $(this);
+							$selectedInput[0].originVal = $selectedInput.val();
+							$marker = $selectedInput.prev(".marker");
+							$selectedInput.addClass("active");
+							$content = $selectedInput.parents();
+							$content.bind("scroll.removeAutocompleteOptBox", removeOpt);
+
+							var input = $selectedInput.offset();
+							var $optBox = $("<div>", {
+								class: "autocomplete_opt_box"
+							}).css({
+								left: input.left,
+								width: $selectedInput.outerWidth()
+							});
+							if (input.top < ($(window).height() * 2) / 3 && !$(this).closest(".dt-editor-autocomplete")
+								.hasClass("up")) {
+								$optBox.css("top", input.top + $selectedInput.outerHeight());
+							} else {
+								$optBox.css("bottom", $(window).height() - input.top);
+							}
+							var $optList = $("<ul>", {
+								class: "filtered"
+							});
+							var $etc;
+							if ($marker.hasClass("s")) {
+								$optList.addClass("s");
+								$etc = $("<ul><li>의도 없음</li></ul>");
+							} else if ($marker.hasClass("a")) {
+								$optList.addClass("a");
+								$etc = $("<ul><li>개체 없음</li></ul>");
+							}
+
+							$optBox.html($optList).append($etc);
+							$("#blank").append($optBox);
+
+							clearTimeout(filterTimeout);
+							filterTimeout = setTimeout(function () {
+								filterOpt($optList, $selectedInput[0].originVal);
+							}, 0);
+						}
+					});
+
+					/* 선택창 필터링 (IE에서 응답성이 떨어짐) */
+					var optTimeout;
+					var filterTimeout;
+					$(document).on("input propertychange", ".dt-editor-autocomplete>input[type=text]", function () {
+						clearTimeout(filterTimeout);
+						clearTimeout(optTimeout);
+						var val = $(this).val();
+						var $optList = $(".autocomplete_opt_box>ul.filtered");
+						optTimeout = setTimeout(function () {
+							if ($optList[0]) {
+								$optList.html('<li class="message">검색 중입니다.</li>');
+								filterTimeout = setTimeout(function () {
+									filterOpt($optList, val);
+								}, 500);
+							}
+						}, 0);
+					});
+
+					function filterOpt($optList, val) {
+						var $filtered = [];
+						var optList = $marker.hasClass("s") ? intentsList : entitiesList;
+						for (i = 0; i < optList.length; i++) {
+							if (optList[i].indexOf(val) > -1) $filtered.push($("<li>" + optList[i] + "</li>"));
+						}
+						if ($filtered.length == 0) $filtered.push($('<li class="message">검색 결과가 없습니다.</li>'));
+						$optList.html($filtered);
+					}
+
+					/* 항목 선택 */
+					$(document).on("mousedown", ".autocomplete_opt_box>ul>li:not(.message)", function () {
+						$selectedInput.val($(this).text()).attr("title", $(this).text()).removeClass("active");
+						$(this).closest(".autocomplete_opt_box").remove();
+						$selectedInput = null;
+						$content.unbind("scroll.removeAutocompleteOptBox");
+					});
+
+					/* 선택창 제거 */
+					$(window).bind("resize", removeOpt);
+
+					function removeOpt() {
+						if ($selectedInput) {
+							clearTimeout(filterTimeout);
+							$selectedInput.val($selectedInput[0].originVal).attr("title", $selectedInput[0].originVal)
+								.removeClass("active");
+							$(".autocomplete_opt_box").remove();
+							$selectedInput = null;
+							$content.unbind("scroll.removeAutocompleteOptBox");
+						}
+					}
+					$(document).bind("mousedown", docDown);
+
+					function docDown(e) {
+						var $clearTarget = $(".autocomplete_opt_box");
+						$clearTarget.each(function () {
+							if ($(e.target)[0] != $selectedInput[0]) {
+								var box = $(this).offset();
+								box.right = box.left + $(this).outerWidth();
+								box.bottom = box.top + $(this).outerHeight();
+								if (!(box.left <= e.pageX && e.pageX <= box.right && box.top <= e.pageY && e.pageY <=
+										box.bottom)) {
+									clearTimeout(filterTimeout);
+									$selectedInput.val($selectedInput[0].originVal).attr("title", $selectedInput[0]
+										.originVal).removeClass("active");
+									$(this).remove();
+									$selectedInput = null;
+									$content.unbind("scroll.removeAutocompleteOptBox");
+								}
+							}
+						});
+					}
+
+					/* ---------- .dt-editor-highlighted ---------- */
+					var $content2;
+					var $downTarget; //selection
+					var $highlightTarget; //selection
+					var highlightedSelection; //selection
+					var $matchedTarget; //matched click
+					var $fixedInput;
+
+					/* autocomplete 활성화 - selection */
+					$(document).on("mousedown", ".dt-editor-highlighted", function () {
+						$downTarget = $(this);
+					});
+					$(document).on("mouseup", ".dt-editor-highlighted", function (e) {
+						if ($downTarget && $(e.target)[0] == $downTarget[0]) {
+							highlightedSelection = window.getSelection().getRangeAt(0);
+							var offset = highlightedSelection.getBoundingClientRect();
+							if (highlightedSelection.startContainer == highlightedSelection.endContainer &&
+								highlightedSelection.toString().replace(/\s/g, "").length > 0) {
+								$highlightTarget = $(this);
+								$content2 = $highlightTarget.parents();
+								$content2.bind("scroll.removeAutocompleteOptBox", removeOpt).bind(
+									"scroll.removeAutocompleteOptBox2", removeOpt2);
+
+								var extracted = highlightedSelection.extractContents();
+								var em = document.createElement("em");
+								em.setAttribute("class", "highlighted");
+								em.appendChild(extracted);
+								highlightedSelection.insertNode(em);
+
+								var $inputBox = $(
+									'<span class="dt-editor-autocomplete"><span class="marker a">@</span><input type="text" placeholder="개체명을 입력해 주십시오."></span>'
+									).css({
+									position: "fixed",
+									left: offset.left,
+									top: offset.top + offset.height,
+									width: 250
+								});
+								$("#blank").append($inputBox);
+								$fixedInput = $inputBox.children("input[type=text]");
+								if (offset.top + offset.height > ($(window).height() * 2) / 3) {
+									$inputBox.addClass("up").css("top", offset.top - $inputBox.outerHeight());
+								}
+								$fixedInput.click().focus();
+							}
+						}
+						$downTarget = null;
+					});
+
+					/* autocomplete 활성화 - matched click */
+					$(document).on("click", ".dt-editor-highlighted>em:not(.highlighted)", function (e) {
+						$matchedTarget = $(this);
+						$content2 = $(this).parents();
+						$content2.bind("scroll.removeAutocompleteOptBox", removeOpt).bind(
+							"scroll.removeAutocompleteOptBox2", removeOpt2);
+
+						var offset = $matchedTarget.offset();
+						var e = $matchedTarget.children(".e").text();
+						var $inputBox = $(
+							'<span class="dt-editor-autocomplete"><span class="marker a">@</span><input type="text" placeholder="개체명을 입력해 주십시오."></span>'
+							).css({
+							position: "fixed",
+							left: offset.left,
+							top: offset.top + $(this).height(),
+							width: 250
+						});
+						$("#blank").append($inputBox);
+						$fixedInput = $inputBox.children("input[type=text]");
+						if (offset.top + $(this).height() > ($(window).height() * 2) / 3) {
+							$inputBox.addClass("up").css("top", offset.top - $inputBox.outerHeight());
+						}
+						$fixedInput.click().focus().val(e);
+					});
+
+					/* 항목 선택 */
+					$(document).on("mousedown", ".autocomplete_opt_box>ul.filtered>li:not(.message)", function () {
+						if (highlightedSelection) {
+							var $matchingTarget = $highlightTarget.children(".highlighted");
+							var text = $matchingTarget.text();
+							var before = "";
+							var after = "";
+							if (text.charAt(0) == " ") {
+								text = text.substring(1);
+								before = " ";
+							}
+							if (text.charAt(text.length - 1) == " ") {
+								text = text.substring(0, text.length - 1);
+								after = " ";
+							}
+							$matchingTarget.html(before + '[@<span class="e">' + $(this).text() +
+								'</span>:<span class="w">' + text + "</span>]" + after).removeClass("highlighted");
+							$("#blank>.dt-editor-autocomplete").remove();
+							highlightedSelection = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind(
+								"scroll.removeAutocompleteOptBox2");
+						} else if ($matchedTarget) {
+							$matchedTarget.children(".e").text($(this).text());
+							$("#blank>.dt-editor-autocomplete").remove();
+							$matchedTarget = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind(
+								"scroll.removeAutocompleteOptBox2");
+						}
+					});
+					$(document).on("mousedown", ".autocomplete_opt_box>ul:not(.filtered)>li", function () {
+						if ($matchedTarget) {
+							var $parent = $matchedTarget.closest(".dt-editor-highlighted");
+							$matchedTarget.text($matchedTarget.children(".w").text());
+							$matchedTarget.contents().unwrap();
+							$parent.html($parent.html());
+							$("#blank>.dt-editor-autocomplete").remove();
+							$matchedTarget = null;
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind(
+								"scroll.removeAutocompleteOptBox2");
+						}
+					});
+
+					/* autocomplete 제거 */
+					$(window).bind("resize", removeOpt2);
+
+					function removeOpt2() {
+						if ($fixedInput) {
+							clearTimeout(filterTimeout);
+							$("#blank>.dt-editor-autocomplete").remove();
+							if (highlightedSelection) {
+								$highlightTarget.children(".highlighted").contents().unwrap();
+								$highlightTarget.html($highlightTarget.html());
+								highlightedSelection = null;
+							} else if ($matchedTarget) {
+								$matchedTarget = null;
+							}
+							$fixedInput = null;
+							$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind(
+								"scroll.removeAutocompleteOptBox2");
+						}
+					}
+					$(document).bind("mousedown", docDown2);
+
+					function docDown2(e) {
+						var $clearTarget = $("#blank>.dt-editor-autocomplete");
+						$clearTarget.each(function () {
+							var box = $(this).offset();
+							box.right = box.left + $(this).outerWidth();
+							box.bottom = box.top + $(this).outerHeight();
+							var lastTop = box.top;
+							var lastBottom = box.bottom;
+
+							if ($(this).next(".autocomplete_opt_box")[0]) {
+								var $optBox = $(this).next(".autocomplete_opt_box");
+								var box2 = $optBox.offset();
+								box2.bottom = box2.top + $optBox.outerHeight();
+								lastTop = Math.min(box.top, box2.top);
+								lastBottom = Math.max(box.bottom, box2.bottom);
+							}
+
+							if (!(box.left <= e.pageX && e.pageX <= box.right && lastTop <= e.pageY && e.pageY <=
+									lastBottom)) {
+								clearTimeout(filterTimeout);
+								$(this).remove();
+								if (highlightedSelection) {
+									$highlightTarget.children(".highlighted").contents().unwrap();
+									$highlightTarget.html($highlightTarget.html());
+									highlightedSelection = null;
+								} else if ($matchedTarget) {
+									$matchedTarget = null;
+								}
+								$fixedInput = null;
+								$content2.unbind("scroll.removeAutocompleteOptBox", removeOpt).unbind(
+									"scroll.removeAutocompleteOptBox2");
+							}
+						});
+					}
+				})();
+			</script>
+		</div>
+		<!-- //#container -->
+
+
+		<!-- footer // -->
+		<footer class="footer">
+			<!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+			<div class="footer-inner">
+				<div class="info">
+					<span class="info-title">대표관리자</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+				<div class="info">
+					<span class="info-title">포스코 ICT(서비스)</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+				<div class="info">
+					<span class="info-title">포스코 ICT(기술)</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // footer -->
+
+	</div>
+	<!-- //#wrapper -->
+</body>
+
+</html>

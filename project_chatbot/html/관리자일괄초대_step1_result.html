@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>관리자초대하기 Step1 result</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header" class="header-type-b"> <!-- 2depth 메뉴만 있을 경우 class="header-type-b"  붙여줄것  / title , util 없음 -->
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    
+                    <!-- 1 depth -->
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                    </ul>
+                    <div class="admin_pop">
+                        <button class="my_btn">마이페이지</button>
+                        <button class="logout_btn">로그아웃</button>
+                    </div>
+                </div>
+                
+                <!-- 2 depth -->
+				<div id="gnb">
+					<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+					<ul>
+						<li>
+							<a href="#n"><span>기업관리</span></a>
+                        </li>
+                        <li class="active">
+							<a href="#n"><span>회원관리</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+                <!-- #content -->
+                <div id="contents">
+                    <!-- sub title -->
+                    <div class="tit-area">
+                        <p class="tit-sec">관리자 일괄초대하기</p>
+                    </div>
+                    <div class="center-in c-invite-step">
+                        <form action="">
+                            <div class="caution">
+                                <p class="tit">주의사항</p>
+                                <ul>
+                                    <li>일괄초대는 일반관리자로 설정되어 초대 메일이 발송됩니다.</li>
+                                    <li>관리자 일괄초대 시 기업코드가 반드시 입력되어야 합니다.</li>
+                                    <li>기업코드 찾기는 아래 기업조회 버튼을 이용하시기 바랍니다. 오류가 발생한 경우 메일을 발송할 수 없습니다.</li>
+                                    <li>검토결과의 오류를 수정한 후 파일을 다시 업로드하시기 바랍니다.</li>
+                                    <li>오류가 없는 경우 발송 버튼이 나타납니다.</li>
+                                </ul>
+                            </div>
+                            <ul class="step-status">
+                                <li class="on">
+                                    <span>1</span>단계</li>
+                                <li><span>2</span>단계</li>
+                                <li><span>3</span>단계</li>
+                            </ul>
+                            <div class="step-cont">
+                                <div class="search-ui clearfix">
+                                    <div class="search-area clearfix">
+                                        <span class="search-tit">기업명</span>
+                                        <div class="search-w">
+                                            <input type="text" title="선택기업명 표시란" class="ipt-type-search" value="포스코">
+                                            <button type="submit" class="btn-search">검색하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invite-result">
+                                    <p class="des">기업명 검색 후에 일괄초대 파일양식을 다운로드 할 수 있습니다.</p>
+                                    <span class="invite-name">기업명 : 포스코</span>
+                                    <a href="#" class="sc-down">일괄초대 양식 다운로드</a>
+                                </div>
+                            </div>
+                            <div class="bot-ui">
+                                <button type="">취소</button>
+                                <button type="">다음</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- // #content -->
+            </div>
+            <!-- //#container -->
+
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+        </div>
+        <!-- // #wrapper -->
+		
+	</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>공지사항 Write</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <!-- #wrapper -->
+    <div id="wrapper">
+        <!-- #header -->
+        <div id="header" class="n_hd_com"> <!-- 1depth 메뉴만 있을 경우 class="n_hd_com"  붙여줄것  -->
+            <div id="header_top">
+                <span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+                        the Great | 챗봇관리자</a></span>
+
+                <!-- 1 depth -->        
+                <div id="gnb-t">
+                    <ul>
+                        <li>
+                            <a href="#">챗봇</a>
+                        </li>
+                        <li>
+                            <a href="#">매뉴얼</a>
+                        </li>
+                        <li>
+                            <a href="#">고객관리</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">공지</a>
+                        </li>
+                        <li>
+                            <a href="#">상담</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="info">
+                    <li>
+
+                        <span class="ic_user">
+                            <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                            홍길동
+                        </span>
+                    </li>
+                    <li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                </ul>
+                <div class="admin_pop">
+					<button class="my_btn">마이페이지</button>
+					<button class="logout_btn">로그아웃</button>
+				</div>
+            </div>
+        </div>
+        <!-- //#header -->
+
+        <!-- #container -->
+        <div id="container">
+
+            <!-- #content -->
+            <div id="contents">
+                <!-- sub title -->
+                <div class="tit-area">
+                    <p class="tit-sec">공지사항 등록</p>
+                </div>
+                <div class="center-in c-management">
+                    <div class="table row edit-user-inforamtion add_service_inforamtion">
+                        <table>
+                            <caption>
+                                공지사항 등록 폼
+                            </caption>
+                            <colgroup>
+                                <col style="width:195px">
+                                <col style="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td>
+                                        <input type="text" value="공지사항 제목입니다.">
+                                        <div class="message error show">필수 입력 정보입니다.</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td>
+                                        <textarea class="textarea" name="" id="" rows="6" style="width: 100%;">공지사항 내용입니다.
+공지사항 내용입니다.
+공지사항 내용입니다.
+공지사항 내용입니다.
+공지사항 내용입니다.
+공지사항 내용입니다.</textarea>
+                                        <div class="message show error">필수 입력 정보입니다.</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td>
+                                        <div class="file-upload-wrapper type2">
+                                            <div class="file-upload">
+                                                <input type="file">
+                                                <button type="button" class="default padding"><span>파일찾기</span></button>
+                                            </div>
+                                            <div class="message show error file-error">첨부할 수 없는 파일 확장자입니다.</div>
+                                            <div class="uploaded-file">공지사항0001.xlxs <button type="button"
+                                                    class="ico-delete"></button>
+                                            </div>
+                                            <div class="uploaded-file">공지사항0002.xlxs <button type="button"
+                                                    class="ico-delete"></button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="message show error">첨부할 수 없는 파일 확장자입니다.
+                        </div> -->
+                                        <div class="information">
+                                            <ul>
+                                                <li>첨부파일의 최대 크기는 5MB이고, 최대 5개 첨부가 가능합니다.</li>
+                                                <li>제한된 확장자의 파일만 첨부가 가능합니다.(hwp, doc, docx, xls, xlsx, ppt, pptx, pdf)
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bot-ui">
+                            <button type="">취소</button>
+                            <button type="">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //#content -->
+
+        </div>
+        <!-- //#container -->
+
+        <!-- footer // -->
+        <footer class="footer">
+            <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+            <div class="footer-inner">
+                <div class="info">
+                    <span class="info-title">대표관리자</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+                <div class="info">
+                    <span class="info-title">포스코 ICT(서비스)</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+                <div class="info">
+                    <span class="info-title">포스코 ICT(기술)</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+            </div>
+        </footer>
+        <!-- // footer -->
+
+    </div>
+    <!-- //#wrapper -->
+</body>
+
+</html>

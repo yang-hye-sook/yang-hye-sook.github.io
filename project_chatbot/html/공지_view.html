@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>공지사항 상세보기</title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <!-- #wrapper -->
+    <div id="wrapper">
+        <!-- #header -->
+        <div id="header" class="n_hd_com"> <!-- 1depth 메뉴만 있을 경우 class="n_hd_com"  붙여줄것  -->
+            <div id="header_top">
+                <span class="logo"><a href="#n"
+                        onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+                        the Great | 챗봇관리자</a></span>
+
+                <!-- 1 depth -->
+                <div id="gnb-t">
+                    <ul>
+                        <li>
+                            <a href="#">챗봇</a>
+                        </li>
+                        <li>
+                            <a href="#">매뉴얼</a>
+                        </li>
+                        <li>
+                            <a href="#">고객관리</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">공지</a>
+                        </li>
+                        <li>
+                            <a href="#">상담</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="info">
+                    <li>
+                        <span class="ic_user">
+                            <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                            홍길동
+                        </span>
+                    </li>
+                    <li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                </ul>
+                <div class="admin_pop">
+					<button class="my_btn">마이페이지</button>
+					<button class="logout_btn">로그아웃</button>
+				</div>
+            </div>
+        </div>
+        <!-- //#header -->
+
+        <!-- #container -->
+        <div id="container">
+            <!-- #content -->
+            <div id="contents">
+                <!-- sub title -->
+                <div class="tit-area">
+                    <p class="tit-sec">공지사항 상세보기</p>
+                </div>
+                <!--  -->
+                <div class="center-in c-management">
+                    <!-- 1104수정 -->	
+                    <div class="notice_top">	
+                        <p class="nt_type">구분 : <span>[전체공지]</span></p>	
+                        <p class="nt_date">등록일 : <span class="date">2020-12-12</span><span>06:24</span></p>	
+                        <p class="nt_num">조회수 : <span>999</span></p>	
+                    </div>
+                    <div class="table row edit-user-inforamtion add_service_inforamtion">
+                        <table>
+                            <caption>
+                                공지사항 등록 폼
+                            </caption>
+                            <colgroup>
+                                <col style="width:195px">
+                                <col style="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td>
+                                        공지사항 제목입니다
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td>
+                                        공지사항 내용입니다.<br /> 
+                                        공지사항 내용입니다.<br /> 
+                                        공지사항 내용입니다.<br /> 
+                                        공지사항 내용입니다.<br /> 
+                                        공지사항 내용입니다.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">첨부파일</th>
+                                    <td>
+                                        <div class="file-upload-wrapper type2">
+                                            <div class="file-upload">
+                                                <p><a href="#" class="file_down">공지사항001.docx</a></p>
+                                                <p><a href="#" class="file_down">공지사항001.docx</a></p>
+                                                <p><a href="#" class="file_down">공지사항001.docx</a></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bot-ui">	
+                            <!-- 1104 버튼에 btn_delte 클래스 추가-->	
+                            <button type="button" class="btn_delte">삭제</button>	
+                            <button type="button">수정</button>	
+                            <button type="button">목록</button>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //#content -->
+        </div>
+        <!-- //#container -->
+
+
+        <!-- footer // -->
+        <footer class="footer">
+            <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+            <div class="footer-inner">
+                <div class="info">
+                    <span class="info-title">대표관리자</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+                <div class="info">
+                    <span class="info-title">포스코 ICT(서비스)</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+                <div class="info">
+                    <span class="info-title">포스코 ICT(기술)</span>
+                    <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                    <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                </div>
+            </div>
+        </footer>
+        <!-- // footer -->
+
+    </div>
+    <!-- //#wrapper -->
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/consulting.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper" class="n_pd_com">
+			<!-- #header -->
+			<div id="header" class="header-type-b n_hd_com">
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li>
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                    </ul>
+				</div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+
+                <!-- /#content -->
+                <div id="content">
+                <!-- sub title -->
+                    <div class="tit-area">
+                        <p class="tit-sec">상담 확인 및 답변</p>
+                    </div>
+                    <div class="center-in c-management-register list_table">
+                        <form action="">
+                            <div class="tb-sty-02">
+                                <table>
+                                    <caption>기업정보 등록 표로 기업명, 대표자, 기업전화번호, 인프라, 기업로고에 따라 작성되었습니다.</caption>
+                                    <colgroup>
+                                        <col style="width:15%">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>이메일</th>
+                                            <td>
+                                                <p>avg@mail.com</p>                                   
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이름</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" placeholder="강호동" maxlength="20">                                                                                         
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>휴대전화</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" placeholder="010-0000-0000" maxlength="20">                                                                                         
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>기업명</th>
+                                            <td>
+                                               <p>기업명</p>                                                                                        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>부서</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" placeholder="인사팀" maxlength="20">                                                                                         
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>직급</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" placeholder="부장" maxlength="20">                                                                                         
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">권한</th>
+                                            <td>
+                                                <div class="select">
+                                                    <select name="" id="">
+                                                        <option value="챗봇관리자">챗봇관리자</option>
+                                                        <option value="챗봇운영자">챗봇운영자</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <th>상태</th>
+                                            <td>
+                                                <p class="join_td">탈퇴요청</p>    
+                                                <button type="" class="btn-ipt-sib btn_del" id="btnCoInquiry">탈퇴승인</button>
+                                            </td>
+                                        </tr>                                 
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="bot-ui">
+                                <button type="">목록</button>
+                                <button type="">저장</button>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        window.onload = function() {
+                            chat_hover();
+                            phone_num();
+                            admin_pop();   
+                        }        
+                        function chat_hover(){
+                            $(".filebox_area").hide();
+                            $( ".filebox_ch").click(function(){                            
+                                $(".filebox_area").toggle();
+                            });
+                        }      
+                        function phone_num(){
+                            $('.onlyNumber').keydown(function(event) {
+                                var key = event.charCode || event.keyCode || 0;
+                                $text = $(this);
+                                if (key !== 8 && key !== 9) {
+                                    if ($text.val().length === 3) {
+                                        $text.val($text.val() + '-');
+                                    }
+                                    if ($text.val().length === 8) {
+                                        $text.val($text.val() + '-');
+                                    }
+                                }            
+                                return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));          
+                            });
+                        }
+                        function admin_pop(){
+                            $(".ic_account").click(function(){
+                                console.log("ddd");
+                                $(".admin_pop").toggle();
+                            });
+                        }
+                    </script>
+                </div>
+                <!-- /#content -->
+            </div>
+            <!-- //#container -->
+
+
+            <!-- footer // -->
+			<footer class="footer">
+				<!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+				<div class="footer-inner">
+					<div class="info">
+						<span class="info-title">대표관리자</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(서비스)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+					<div class="info">
+						<span class="info-title">포스코 ICT(기술)</span>
+						<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+						<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+					</div>
+				</div>
+			</footer>
+			<!-- // footer -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

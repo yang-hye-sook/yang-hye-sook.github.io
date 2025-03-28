@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header" class="header-type-b"> <!-- 2depth 메뉴만 있을 경우 class="header-type-b"  붙여줄것  / title , util 없음 -->
+				<div id="header_top">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    
+
+                    <!-- 1 depth -->
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">고객관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                    </ul>
+                    <div class="admin_pop">
+                        <button class="my_btn">마이페이지</button>
+                        <button class="logout_btn">로그아웃</button>
+                    </div>
+                </div>
+                
+                <!-- 2 depth -->
+				<div id="gnb">
+					<ul>
+						<li class="active">
+							<a href="#n"><span>기업관리</span></a>
+                        </li>
+                        <li>
+							<a href="#n"><span>회원관리</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+
+                <!-- #content -->
+                <div id="contents">
+				    <!-- sub title -->
+                    <div class="tit-area">
+                        <p class="tit-sec">기업관리</p>
+                    </div>
+                    <div class="center-in c-management">
+                        <form action="">
+                            <div class="search-ui clearfix">
+                                <div class="search-area clearfix">
+                                    <select name="" id="" title="유형선택" class="sel-type-a">
+                                        <option value="">선택</option>
+                                    </select>
+                                    <div class="search-w">
+                                        <input type="text" placeholder="기업명을 입력해주세요." title="기업명 입력란" class="ipt-type-search">
+                                        <button type="submit" class="btn-search">검색하기</button>
+                                    </div>
+                                    
+                                </div>
+                                <button type="submit" class="btn-sty-01">등록</button>
+                            </div>
+                            <div class="tb-sty-01">
+                                <table>
+                                    <caption>기업관리 검색표</caption>
+                                    <colgroup>
+                                        <col style="width:15%;">
+                                        <col style="width:25%;">
+                                        <col style="width:16%;">
+                                        <col style="width:25%;">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>기업명</th>
+                                            <th>상태</th>
+                                            <th>대표관리자</th>
+                                            <th>전화번호</th>
+                                            <th>인프라</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>사용</td>
+                                            <td><a href="#">홍길동</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>On Promise</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>On Promise</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">삼성전자</a></td>
+                                            <td>탈퇴요청</td>
+                                            <td><a href="#">이순신</a></td>
+                                            <td>010-9999-9999</td>
+                                            <td>Cloud</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination clearfix">
+                                <a href="#" class="pg-prev-end">맨 처음</a>
+                                <a href="#" class="pg-prev">이전</a>
+                                <a href="#" class="no cur">1</a>
+                                <a href="#" class="no">2</a>
+                                <a href="#" class="no">3</a>
+                                <a href="#" class="no">4</a>
+                                <a href="#" class="no">5</a>
+                                <a href="#" class="pg-next">맨 끝</a>
+                                <a href="#" class="pg-next-end">다음</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- #content -->
+			</div>
+            <!-- //#container -->
+            
+
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

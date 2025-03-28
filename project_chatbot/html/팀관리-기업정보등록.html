@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>기업정보등록</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			 <!-- #header -->
+             <div id="header" class="header-type-b com_hd">
+				<div id="header_top" class="company_hd">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">매뉴얼</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">팀관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지</a>
+                           </li>
+                           <li>
+                               <a href="#">상담</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+					</ul>
+				</div>
+				<div id="depth2_bar"></div>
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+
+                <!-- /#content -->
+                <div id="content">
+                    <!-- sub title -->
+                    <div class="tit-area">
+                        <p class="tit-sec">기업정보 등록</p>
+                    </div>
+                    <div class="center-in c-management-register">
+                        <form action="">
+                            <div class="tb-sty-02">
+                                <table>
+                                    <caption>기업정보 등록 표로 기업명, 대표자, 기업전화번호, 인프라, 기업로고에 따라 작성되었습니다.</caption>
+                                    <colgroup>
+                                        <col style="width:15%">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>기업명</th>
+                                            <td>
+                                                <input type="text" class="ipt-has-btn" title="기업명">
+                                                <button type="" class="btn-ipt-sib">중복확인</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>대표자</th>
+                                            <td>
+                                                <input type="text" class="ipt-w-100p" title="대표자 입력란">
+                                                <p class="require">필수 입력 정보입니다.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>기업전화번호</th>
+                                            <td>
+                                                <input type="text" title="기업전화번호 입력란">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>인프라</th>
+                                            <td>
+                                                <span class="chk-wrapper">
+                                                    <input type="radio" value="Cloud" name="infraRadioBtn" id="infraRadio1" checked>
+                                                    <label for="infraRadio1">Cloud</label>
+                                                </span>
+                                                <span class="chk-wrapper">
+                                                    <input type="radio" value="On Premise" name="infraRadioBtn" id="infraRadio2">
+                                                    <label for="infraRadio2">On Premise</label>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>기업로고</th>
+                                            <td>
+                                                <div class="file-w">
+                                                    <div id="previewCompany" class="logo-status">
+                                                        <span class="des">
+                                                            Company<br>이미지를<br>선택해주세요.
+                                                        </span>
+                                                    </div>
+                                                    <div class="filebox">
+                                                        <label for="fileImage">파일선택</label>
+                                                        <input type="file" id="fileImage" accept="image/*" onchange="setThumbnail(event);"
+                                                            multiple />
+                                                        <p class="des">이미지 사이즈 90*90</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>기업상태</th>
+                                            <td>
+                                                <p class="join_td">사용</p>
+                                                <button type="" class="btn-ipt-sib btn_del" id="btn_out">기업 탈퇴신청</button>
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bot-ui">
+                                <button type="">취소</button>
+                                <button type="">저장</button>
+                            </div>
+                            <!-- popup 기업계정신청 레이어 팝업 -->					
+                            <div class="popup-wrapper show">
+                                <div class="popup-bg"></div>
+                                <div class="popup popup_box">
+                                    <button type="button" class="popup-close-button">팝업 닫기</button>
+                                    <div class="pop_title">기업계정 탈퇴 승인</div>
+                                    <div class="pop_cont">
+                                        <p>
+                                            기업계정 탈퇴를 신청하시겠습니까?<br/>
+                                            기업게정이 탈퇴가 되면,<br/>
+                                            기업계정의 모든 챗봇 및 관리자 계정이 삭제됩니다.<br/>
+                                            기업계정 탈퇴는 플랫폼 관리자 승인 후 완료됩니다.
+                                        </p>
+                                    </div>
+                                    <div class="pop_btn">
+                                        <button type="" class="btn_delte">삭제</button>
+                                        <button type="">승인</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(function(){    
+                                    $('.popup-wrapper.show').hide();       
+                                    $('#btn_out').click(function(){
+                                        $('.popup-wrapper.show').show();
+                                    });
+                                    $('.popup-close-button').click(function(){
+                                        $(this).parent().parent().hide();
+                                    });
+                                })
+                            </script>	
+                            <!-- /popup -->	
+                        </form>
+                    </div>
+                    <script>
+                        function setThumbnail(event) {
+                            for (var image of event.target.files) {
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    const img = document.createElement("img");
+                                    img.setAttribute("src", event.target.result);
+                                    document.querySelector("div#previewCompany").appendChild(img);
+                                };
+                                console.log(image);
+                                reader.readAsDataURL(image);
+                            }
+                        }
+                    </script>
+                </div>
+                <!-- /#content -->
+			</div>
+            <!-- //#container -->
+            
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer // -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

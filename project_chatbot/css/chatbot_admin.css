@@ -1,0 +1,850 @@
+nav{
+  height:70px;
+  line-height: 70px;
+  background: #f0f5fb;
+}
+.main{font-family:"noto-sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;}
+
+#container{
+  background: #e9eef4;
+}
+.chat_admin{
+  width: 1366px;
+  margin:0 auto;
+  background:#e9eef4 url('../images/bg_admin01.png') no-repeat center center !important;    
+}
+
+
+.wrapper_admin{
+  height: 100%;
+  background: #e9eef4;
+}
+#header{
+  height: 50px !important;
+}
+#header_top{
+  background: #05acd4 !important;
+}
+
+/* 헤더 */
+/* 1103수정 */
+.chat_admin .chat_header{
+  background: transparent;
+  /* height: 70px;
+  line-height: 70px; */
+  width: 1300px;
+  margin: 0 auto 24px;
+  display:flex;
+  align-items: center;
+}
+/* 1103수정 */
+.chat_admin .chat_header .header_left{
+  font-size: 14px;
+  color:#838589;
+  align-items:center;
+}
+.chat_admin .chat_header .header_left p span{
+  color: #30343d;
+}
+.chat_admin .chat_header .header_center{
+  font-size: 20px;
+  color: #18274d;
+  font-weight: bold;
+  flex: 3;
+  text-align: center;
+}
+.chat_admin .chat_header .header_right{  
+  color: #838589;  
+  font-size: 14px;
+}
+.chat_admin .chat_header .header_right button{
+  margin-left: 10px;
+  color: #fff;
+  background:#123f7c;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+}
+.cont_chat_sc{
+  margin-left: 30px;
+}
+/* 빈 li */	
+.chat_empty{	
+  background: transparent;	
+  display: inline-block;	
+  position: relative;	
+  width: auto;	
+  height: auto;  	
+  margin: 18px 10px;	
+  padding: 30px;	
+  background-color: transparent;	
+  border-radius: 14px 14px 14px 0;	
+  -webkit-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);	
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);	
+  vertical-align: top;	
+}
+
+/* 상단 첫번째 고정 li */
+.contents .top_fix{
+  background-color: #05acd4;
+  pointer-events: none;
+}
+.chatbot-item.top_fix::after{
+  border-top: 15px solid #05acd4;
+}
+.chatbot-item.top_fix::before{
+  border-top-color: #05acd4;
+}
+.chatbot-item.top_fix:after{
+  border-top-color: #05acd4;
+}
+.top_fix .chatbot-bottom{
+  color:#fff;
+  margin-top: 38px;
+}
+.top_fix .chatbot-title{
+  color:#fff;
+  padding-bottom: 10px;  
+}
+.chatbot-top{
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 예제봇 */
+li.chatbot-item.ex_bot{
+  background: #f5fcc4;
+}
+.chatbot-top span.ex_txt{
+  color:#838589;
+  font-size: 12px;
+  margin: 13px 0 0 9px;
+}
+
+.chatbot-top span.chatbot-tit{
+  margin: 16px 0 0 0;
+}
+.switch input:checked+span{
+  background: #0496b9;
+}
+
+.chatbot-lists{
+  width: 100%;
+  margin: 0;
+}
+.chatbot-lists li{
+  position: relative;
+}
+.chatbot-item{
+  height:130px;
+  width: 270px;
+  padding:20px;  
+  margin: 0 20px 20px 0;
+  position: relative;
+	background: #fff;	
+}
+.chatbot-item:nth-child(4n){
+  margin-right: 0;
+}
+
+/* 말풍선 꼬리 */
+.chatbot-item.ex_bot:after, .chatbot-item.ex_bot:before {
+  top: 100%;
+	left:5.5%;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.chatbot-item.ex_bot:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #f5fcc4;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.chatbot-item.ex_bot::before {
+	border-top-color: #f5fcc4;
+}
+
+
+/* 말풍선 꼬리 */
+.chatbot-item:after, .chatbot-item:before {
+  top: 100%;
+	left:5.5%;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.chatbot-item:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #fff;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.chatbot-item:before {
+	border-color: rgba(177, 195, 229, 0);
+	border-top-color: #fff;
+	border-width: 18px;
+	margin-left: -17px;
+}
+
+.chatbot-title{
+  font-size: 15px;
+  line-height:25px;
+  font-weight: bold;
+}
+.chatbot-bottom{
+  padding: 0;
+  float: left;  
+}
+.chatbot-bottom .chatbot-desc{
+  font-weight: bold;
+}
+.chat_top_img{
+  float: right;
+  margin: 20px;
+}
+.chatbot-last-date{
+  left: 18px;
+  bottom: 14px;
+  font-weight: bold;
+}
+
+
+/* 말풍선 하버 */
+.chat_hover{  
+  position: absolute;	
+  display:none;	
+  height:145px;	
+  width: 271px;	
+  top:0px;	
+  border-radius: 14px 14px 14px 0;	
+  padding: 20px;	
+  left:0;	
+  margin: auto;	
+  /* background-color: rgba(0, 0, 0, 0.7); */	
+  background: url("../images/bg_chatbot_list02.png") no-repeat left top;	
+  color: #fff;
+}
+.chat_hover .chatbot_cont{  
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+  word-break: break-all;
+  margin-bottom: 10px;    
+  height: 55px;
+}
+.chat_hover .cont_btn{
+  position: relative;
+  width:80%;
+  margin: 0 auto;
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+li.chatbot-item.ex_bot .chat_hover .cont_btn a{	
+  width: 48%;	
+}
+.chat_hover .cont_btn a{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.chat_hover .cont_btn a:first-child::before{
+    content: "";
+    position: absolute;
+    left:0;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.chat_hover .cont_btn a::before{
+   content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.chat_hover .cont_btn a::after{
+   content: "";
+    position: absolute;
+    right:0;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.chat_hover button{
+  background: #fff;
+  width:80%;
+  margin: 0 auto;
+  color: #13131f;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+/* .chatbot-item:hover:before{	
+  border-top: 15px solid rgba(0, 0, 0, 0.6);	
+}	
+.chatbot-item:hover::after{	
+  border-top-color: transparent;	
+}	
+.chatbot-item:hover:after, .chatbot-item:hover:before{	
+  top: 100%;	
+  left:5.5%;	
+} */	
+.chatbot-item:hover:after, .chatbot-item:hover:before{	
+  top: 100%;	
+  left:5.5%;	
+}
+
+.chatbot-options .switch span{
+  color: #30343d;
+  font-weight: bold;
+}
+
+
+/* company_admin_chatbotList.html 영역 */
+.wrapper #header_top{
+  background: #567bc5 !important;
+}
+.wrapper #header{
+  height: 50px !important;
+}
+.wrapper #container{
+  background: #eaf0f7;
+}
+
+.wrapper .cont_article{        
+  display: flex;
+  flex-direction: inherit;  
+  height: 100%;
+  width: 1366px;
+  margin: 0 auto;   
+  overflow: hidden; 
+}
+
+/* 왼쪽 */
+.wrapper .cont_left{
+  flex:1; 
+  background: #fff;
+}
+.wrapper .cont_left .left_tit{
+  text-align: center;
+  font-size: 20px;
+  color: #18274d;
+  font-weight: bold;
+  letter-spacing: -1px;
+  height:70px;
+  line-height: 70px;
+}
+.wrapper .left_cont{
+  margin: 0 30px;
+  height: 100%;
+}
+.wrapper .cont_inputBox input{
+  border: none;
+  background: #f0f5fb;
+  color: #777b86;
+  font-size: 15px;
+  height: 36px;
+  line-height: 36px;
+  width: 75%;
+  font-weight: bold;
+}
+.wrapper .left_cont button{
+  color: #fff;
+  width:25%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+  background:#567bc5;
+  font-weight: bold;
+  margin-left: -3.5px;
+}
+.wrapper .left_cont .companyList_box{
+  margin-top: 20px;
+}
+.wrapper .left_cont .companyList_box .empty_li{  
+display:none;
+height: 655px;
+}
+.wrapper .left_cont .companyList_box .empty_li p{
+font-size: 18px;
+color: #18274d;
+font-weight: bold;
+text-align: center;  
+line-height: 655px;
+}
+.wrapper .left_cont .companyList_box .list_cont{
+  display: flex;
+  width: 100%;
+  height:  86px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow :5px 5px 6px #dfe2eb;
+  margin-top: 10px;
+}
+
+/* 하버 */
+.wrapper .left_cont .companyList_box .list_cont:hover{ 
+  border: 1px #567bc5 solid;
+}
+.wrapper .left_cont .companyList_box .list_cont.active_com{
+  background: #567bc5;
+  color: #fff;
+}
+.wrapper .left_cont .companyList_box .list_cont.active_com .center_area .com_name{
+  background: #567bc5;
+  color: #fff;
+}
+.wrapper .left_cont .companyList_box .list_cont.active_com .center_area .com_second{
+  background: #567bc5;
+  color: #fff;
+}
+.wrapper .left_cont .companyList_box .list_cont.active_com .center_area .com_second strong{
+  background: #567bc5;
+  color: #fff;
+}
+.wrapper .left_cont .companyList_box .list_cont .logo{
+  flex: 1;
+}
+.wrapper .left_cont .companyList_box .list_cont .logo img{
+  padding:22px 0 0 19px;
+}
+.wrapper .left_cont .companyList_box .list_cont .center_area{
+  flex: 6;
+  width:90%;
+  padding: 19px 0;
+  text-align: center;
+}
+.wrapper .left_cont .companyList_box .list_cont .center_area .com_name{
+  color: #567bc5;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  margin:0 25px;
+  padding-bottom: 8px;
+  border-bottom: 1px #dbdcdf solid;
+  
+}
+.wrapper .left_cont .companyList_box .list_cont .center_area .com_second{
+  color:#838589;
+  font-size: 12px;
+  /* font-weight: bold; */
+  padding-top: 10px;
+}
+.wrapper .left_cont .companyList_box .list_cont .center_area .com_second strong{
+  color:#30343d;
+}
+.wrapper .left_cont .companyList_box .list_cont .center_area .com_second span{
+  margin-right:5px;
+}
+.wrapper .left_cont .companyList_box .list_cont .setting_btn{
+  flex: 1;
+}
+.wrapper .left_cont .companyList_box .list_cont .setting_btn img{
+  padding: 34px 0 0 10px;
+}
+
+/* 오른쪽 */
+.wrapper .cont_right{    
+  flex: 2;
+  background: url('../images/bg_admin01.png') no-repeat center center; 
+}
+/* 헤더 */
+.wrapper .chat_header{
+  background: transparent;
+  padding-left: 15px;
+  height: 70px;
+  line-height: 70px;
+  /* width: 100%; */
+  margin-bottom: 0;
+  /* display:flex; */
+  position: relative;
+}
+.wrapper .chat_header .header_left{
+  font-size: 14px;
+  color:#838589;
+  /* align-items:center; */
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+.wrapper .chat_header .header_left p span{
+  color: #30343d;
+}
+.wrapper .chat_header .header_center{
+  font-size: 20px;
+  color: #18274d;
+  font-weight: bold;
+  flex: 3;
+  text-align: center;
+}
+.wrapper .chat_header .header_right{  
+  color: #838589;  
+  font-size: 14px;
+  /* flex: 1; */
+  position: absolute;
+  top: 0;
+  right:30px;
+
+}
+.wrapper .chat_header .header_right button{
+  margin-left: 10px;
+  color: #fff;
+  background:#123f7c;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+}
+.wrapper .chatbot-lists{
+  margin: 0;
+}
+.wrapper .right_cont{  
+  overflow-y: auto;	
+  height: 100%;	
+}	
+.wrapper .right_cont .empty_list{	
+  text-align: center;	
+  color: #567bc5;	
+  font-weight: bold;	
+  font-size: 20px;    
+  line-height: 885px; 
+}
+.wrapper .chatbot-item{
+  width: 272px;
+  height: 185px;
+  margin: 0 20px 20px 0;
+}
+.wrapper .chatbot-item:nth-child(3n){
+  margin-right: 0 !important;
+}
+/* 빈 li */
+.wrapper .chat_empty{
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  width: 346px;
+  height: 185px;  
+  margin: 18px 10px;
+  padding: 30px;
+  background-color: transparent;
+  border-radius: 14px 14px 14px 0;
+  -webkit-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
+  vertical-align: top;
+}
+
+/* 상단 첫번째 고정 li */
+.wrapper .contents{
+  height: 100%;
+}
+.wrapper .contents .top_fix{
+  background-color: #567bc5;
+  pointer-events: none;
+}
+.wrapper .chatbot-item.top_fix::after{
+  border-top: 15px solid #567bc5;
+}
+.wrapper .chatbot-item.top_fix::before{
+  border-top-color: #567bc5;
+}
+.wrapper .chatbot-item.top_fix:after{
+  border-top-color: #567bc5;
+}
+.wrapper .top_fix .chatbot-bottom{
+  color:#fff;
+  margin-top: 38px;
+}
+.wrapper .top_fix .chatbot-title{
+  color:#fff;
+  padding-bottom: 10px;  
+}
+.wrapper .chatbot-top{
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 예제봇 */
+.wrapper li.chatbot-item.ex_bot{
+  background: #f5fcc4;
+}
+.wrapper .chatbot-top span.ex_txt{
+  color:#838589;
+  font-size: 12px;
+  margin: 13px 0 0 9px;
+}
+.wrapper .chatbot-top span.chatbot-tit{
+  margin: 16px 0 0 0;
+}
+.wrapper .switch input:checked+span{
+  background: #567bc5;
+}
+.wrapper .chatbot-lists{
+  margin: 0;
+  width:auto;
+}
+.wrapper .chatbot-lists li{
+  position: relative;
+}
+.wrapper .chatbot-item{
+  height:130px;
+  width:232px;
+  padding:20px;  
+  margin: 0 17px 20px 0;
+  position: relative;
+    background: #fff;	
+}
+.wrapper .chatbot-item:nth-child(3n){
+  margin-right: 0;
+}
+
+
+/* 말풍선 꼬리 */
+.wrapper .chatbot-item:after, .chatbot-item:before {
+   top: 100%;
+    left:5.5%;
+    /* border: solid transparent; */
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.wrapper .chatbot-item:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 15px;
+    margin-left: -15px;
+}
+.wrapper .chatbot-item:before {
+    border-color: rgba(177, 195, 229, 0);
+    border-top-color: #fff;
+    border-width: 16px;
+    margin-left: -15px;
+}
+.wrapper .chatbot-item.ex_bot:after{
+  border-top-color: #f5fcc4;
+}
+.wrapper .chatbot-item.ex_bot::before{
+  border-top-color: #f5fcc4;
+}
+
+.wrapper .chatbot-title{
+  font-size: 15px;
+  line-height:25px;
+  font-weight: bold;
+}
+.wrapper .chatbot-bottom{
+  padding: 0;
+  float: left;  
+}
+.wrapper .chatbot-bottom .chatbot-desc{
+  font-weight: bold;
+}
+.wrapper.chat_top_img{
+  float: right;
+  margin: 20px;
+}
+.wrapper .chatbot-last-date{
+  left: 18px;
+  bottom: 14px;
+  font-weight: bold;
+}
+
+/* 말풍선 하버 */
+.wrapper .chat_hover{  	
+  position: absolute;	
+  display:none;	
+  height:145px;	
+  width:232px;	
+  padding:20px;  	
+  top:0;	
+  border-radius: 14px 14px 14px 0;	
+  left:0;	
+  margin: auto;	
+  /* background-color: rgba(0, 0, 0, 0.7); */	
+  color: #fff;	
+  background: url('../images/bg_chatbot_list.png') no-repeat center 0;	
+  	
+}
+.wrapper_admin .chat_hover{  
+  position: absolute;
+  display:none;
+  height:145px;
+  width:271px;
+  padding:20px;  
+  top:0;
+  border-radius: 14px 14px 14px 0;
+  left:0;
+  margin: auto;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  color: #fff;
+  /* background: url('../images/bg_chatbot_list02.png') no-repeat center 0; */
+}
+.wrapper .chat_hover .chatbot_cont{  
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 55px;
+  word-break: break-all;
+  margin-bottom: 10px;    
+}
+.wrapper .chat_hover .cont_btn{
+  position: relative;
+  width:80%;
+  margin: 0 auto;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+/* 예시봇 하버 */	
+.wrapper .chat_hover.ex_hover .cont_btn a{	
+  width: 48%;	
+  display: inline-block;	
+  text-align: center;	
+  color: #fff;	
+}
+.wrapper .chat_hover .cont_btn a{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+}
+.wrapper .chat_hover .cont_btn a:first-child::before{
+    content: "";
+    position: absolute;
+    left:0;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.wrapper .chat_hover .cont_btn a::before{
+   content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.wrapper .chat_hover .cont_btn a::after{
+   content: "";
+    position: absolute;
+    right:0;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+}
+.wrapper .chat_hover button{
+  background: #fff;
+  width:80%;
+  margin: 0 auto;
+  color: #13131f;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+/* 말풍선 꼬리하버 */
+/* .chatbot-item:hover::after{
+  border-top: 15px solid rgba(0, 0, 0, 0.6);
+} */
+
+ /* .wrapper .chatbot-item:hover:before{
+  border-top: 15px solid rgba(0, 0, 0, 0.6);
+}
+.wrapper .chatbot-item:hover::after{
+  border-top-color: transparent;
+}
+.wrapper .chatbot-item:hover:after, .chatbot-item:hover:before{
+  top: 100%;
+  left:5.5%;
+}  */
+
+.wrapper .paging {
+  position: relative;
+  text-align: center;
+  padding: 35px 0;
+  z-index: 10;
+}
+.wrapper .paging * {
+  vertical-align: middle;
+  font-weight: bold;
+}
+.wrapper .paging > a {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrapper .paging .prev,
+.paging .next {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: url(../images/prev_icon01.png) center no-repeat;
+  border: 1px solid #dbdcdf;
+  z-index: 5;
+}
+.wrapper .paging strong {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+  font-family: "notoSansKR", dotum, "돋움";
+  padding: 0 10px;
+  font-weight: bold;
+}
+.wrapper .paging .prev.most {
+  margin-left: 0;
+  background: url(../images/prev_icon02.png) center no-repeat;
+}
+.wrapper .paging .next {
+  background: url(../images/next_icon01.png) center no-repeat;
+}
+.wrapper .paging .next.most {
+  background: url(../images/next_icon02.png) center no-repeat;
+}
+.wrapper .paging span {
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 30px;
+}
+.wrapper .paging span a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+  color: #27282d;
+  font-size: 14px;
+}
+.wrapper .paging span .on{
+  background: #567bc5;
+  border-radius: 50%;
+  /* width: 24px; */
+  height: 26px;
+  line-height: 26px;
+}
+.wrapper .paging a.num.on{
+  color: #fff;
+}
+.wrapper .chatbot-options .switch span{
+color: #30343d;
+font-weight: bold;
+}

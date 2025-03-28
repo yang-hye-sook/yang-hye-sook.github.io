@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>플랫폼 관리자 3depth 메뉴 레이아웃</title>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="shorcut icon" href="../images/chatbot.ico" type="image/x-icon" />
+	<link rel="icon" href="../images/chatbot.ico" type="image/x-icon" />
+	<script src="../js/jquery-1.12.4.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+
+<body>
+	<!-- #wrapper -->
+	<div id="wrapper">
+		<!-- #header -->
+		<div id="header" class="header-type-b"> <!-- 2depth 혹은 3depth 메뉴가 있을 경우인데  title , util 없을때 class="header-type-b"  붙여줄것  /  -->
+			<div id="header_top">
+				<span class="logo"><a href="#n"
+						onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO
+						the Great | 챗봇관리자</a></span>
+				
+				<!-- 1 depth -->
+				<div id="gnb-t">
+					<ul>
+						<li>
+							<a href="#">챗봇</a>
+						</li>
+						<li>
+							<a href="#">매뉴얼</a>
+						</li>
+						<li>
+							<a href="#">고객관리</a>
+						</li>
+						<li class="active">
+							<a href="#">공지</a>
+						</li>
+						<li>
+							<a href="#">상담</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="info">
+					<li>
+
+						<span class="ic_user">
+							<i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+							홍길동
+						</span>
+					</li>
+					<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+				</ul>
+				<div class="admin_pop">
+					<button class="my_btn">마이페이지</button>
+					<button class="logout_btn">로그아웃</button>
+				</div>
+			</div>
+
+			<!-- 2 depth -->
+			<div id="gnb">
+				<h1>사람찾기 챗봇 사람찾기 챗봇 사람찾기 챗봇</h1>
+				<ul>
+					<li>
+						<a href="#n"><span>Intents</span></a>
+					</li>
+					<li>
+						<a href="#n"><span>Entities</span></a>
+					</li>
+					<li>
+						<a href="#n"><span>Dialog</span></a>
+					</li>
+					<li class="active">
+						<a href="#n"><span>Test & Publishing</span></a>
+						<ul>
+							<li>
+								<a href="#n"><span>Interactive Test</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Batch Test</span></a>
+							</li>
+							<li>
+								<a href="#n"><span>Publishing</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#n"><span>Log Monitoring</span></a>
+					</li>
+					<li>
+						<a href="#n"><span>Configuration</span></a>
+					</li>
+				</ul>
+			</div>
+			<div id="util">
+				<a href="#n" class="ic_setting">설정</a>
+				<a href="#n" class="ic_test" onclick="$('#right').show(); return false;">학습 테스트</a>
+			</div>
+
+			<!-- 3 depth -->
+			<div id="depth2_bar"></div>
+		</div> 
+		<!-- //#header -->
+
+		<!-- #container -->
+		<div id="container">
+			<!-- content -->
+			<div id="contents">
+				<!-- sub title -->
+				<div class="tit-area">
+					<p class="tit-sec">공지사항</p>
+				</div>
+				<!-- 컨텐츠 영역 -->
+				<div></div>
+			</div>
+			<!-- // content -->
+			
+		</div>
+		<!-- //#container -->
+
+		<!-- footer // -->
+		<footer class="footer">
+			<!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+			<div class="footer-inner">
+				<div class="info">
+					<span class="info-title">대표관리자</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+				<div class="info">
+					<span class="info-title">포스코 ICT(서비스)</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+				<div class="info">
+					<span class="info-title">포스코 ICT(기술)</span>
+					<a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+					<a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+				</div>
+			</div>
+		</footer>
+		<!-- // footer -->
+
+	</div>
+	<!-- //#wrapper -->
+</body>
+
+</html>

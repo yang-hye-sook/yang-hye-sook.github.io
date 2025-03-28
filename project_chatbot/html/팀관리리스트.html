@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>회원관리</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header" class="n_hd_com">
+				<div id="header_top" class="company_hd">
+					<span class="logo"><a href="#n" onclick="$(body).addClass('global'); $('#gnb li').removeClass('active'); $('#left').empty().hide(); $('#right').empty().hide(); $('#full').empty().load('Main.html').show(); $('#center').empty().hide(); return false;">POSCO the Great | 챗봇관리자</a></span>
+                    
+                    <!-- 1 depth -->
+                    <div id="gnb-t">
+                        <ul>
+                           <li>
+                               <a href="#">챗봇</a>
+                           </li>
+                           <li>
+                               <a href="#">메뉴얼</a>
+                           </li>
+                           <li class="active">
+                               <a href="#">팀관리</a>
+                           </li>
+                           <li>
+                               <a href="#">공지·Help</a>
+                           </li>
+                           <li>
+                               <a href="#">대시보드</a>
+                           </li>
+                        </ul>
+                    </div>
+                    <ul class="info">
+						<li>
+                            <span class="ic_user">
+                                <i class="ic_user_p" style="background-image:url(../img/sample_ic_user.png)"></i>
+                                홍길동
+                            </span>
+                        </li>
+						<li><a href="#n" class="ic_account">플랫폼관리자</a></li>
+                    </ul>
+                    <div class="admin_pop">
+                        <button class="my_btn">마이페이지</button>
+                        <button class="logout_btn">로그아웃</button>
+                    </div>
+				</div>
+				
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">           
+            
+                <!-- /#conent -->
+                <div id="conent">
+                    <div class="center-in c-management-user">
+                        <div class="tim_admin_list">
+                            <div class="list_cont">
+                                <div class="logo">
+                                    <img src="../images/com_list_icon.png" alt="">
+                                    <p class="com_name">(주)포스코</p>
+                                </div>
+                                <div class="right_area">                            
+                                    <p class="com_second">
+                                        <span class="name">대표관리자명 : 홍길동</span>
+                                        <span class="date">생성일 : 2020-04-23</span>
+                                    </p>
+                                </div>
+                                <div class="setting_btn">
+                                    <button>기업정보수정</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="">
+                            <div class="search-ui clearfix">
+                                <div class="search-area clearfix">
+                                    <select name="" id="" title="유형선택" class="sel-type-a">
+                                        <option value="">선택</option>
+                                    </select>
+                                    <div class="search-w">
+                                        <input type="text" placeholder="기업명 또는 회원명을 입력해주세요." title="기업명 입력란" class="ipt-type-search">
+                                        <button type="submit" class="btn-search">검색하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-ui">
+                                <div class="l">
+                                    <button class="btn-sty-01">탈퇴</button>
+                                    <button class="btn-sty-01">권한인계</button>
+                                </div>
+                                <div class="r">
+                                    <button class="btn-sty-01">일괄초대</button>
+                                    <button class="btn-sty-01">초대</button>
+                                </div>
+                            </div>
+                            <div class="tb-sty-01">
+                                <table>
+                                    <caption>기업관리 검색표</caption>
+                                    <colgroup>
+                                        <col style="width:4.5%;">
+                                        <col style="width:6.5%;">
+                                        <col style="width:15%;">
+                                        <col style="width:15%;">
+                                        <col style="width:15%;">
+                                        <col style="width:auto;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input id="chkAllUser" name="chkAllUser" type="checkbox" title="체크란 전체체크">
+                                            </th>
+                                            <th>이름</th>
+                                            <th>기업명</th>
+                                            <th>상태</th>
+                                            <th>권한</th>
+                                            <th>전화번호</th>
+                                            <th>E-Mail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- if empty -->
+                                        <tr>
+                                            <td colspan="7">
+                                                <p class="des-empty">
+                                                    조회된 기업이 없습니다.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <!-- // -->
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox" title="">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="" name="chkUser" type="checkbox">
+                                            </td>
+                                            <td>송치훈</td>
+                                            <td>삼성전자</td>
+                                            <td>상태란</td>
+                                            <td>권한란</td>
+                                            <td>010-9999-9999</td>
+                                            <td>sample@madeweb.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination clearfix">
+                                <a href="#" class="pg-prev-end">맨 처음</a>
+                                <a href="#" class="pg-prev">이전</a>
+                                <a href="#" class="no cur">1</a>
+                                <a href="#" class="no">2</a>
+                                <a href="#" class="no">3</a>
+                                <a href="#" class="no">4</a>
+                                <a href="#" class="no">5</a>
+                                <a href="#" class="pg-next">맨 끝</a>
+                                <a href="#" class="pg-next-end">다음</a>
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                        $(function(){
+                            const CheckAllId = "#chkAllUser";
+                            const CheckName = "chkUser";
+                            $(CheckAllId).click(function() {
+                            const chk = $(this).is(":checked");
+                                if (chk) {
+                                    $("input[name='"+CheckName+"']").prop("checked", true);
+                                } else {
+                                    $("input[name='"+CheckName+"']").prop("checked", false);
+                                }
+                            });
+                        })
+                        
+                    </script>
+                </div>
+                <!-- /#conent -->
+			</div>
+            <!-- //#container -->
+            
+
+            <!-- footer // -->
+            <footer class="footer">
+                <!-- <p class="footer-title">챗봇 관련 문의</p> 공통사항 : 삭제해 줄것!!!! -->
+                <div class="footer-inner">
+                    <div class="info">
+                        <span class="info-title">대표관리자</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(서비스)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                    <div class="info">
+                        <span class="info-title">포스코 ICT(기술)</span>
+                        <a href="tel:02-2345-0987" class="tel">02)2345-0987</a>
+                        <a href="mailto:posco@posco.com" class="mail">posco@posco.com</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- // footer -->
+
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

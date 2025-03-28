@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/builder-ui.css" /> <!-- builde 관련 css-->
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/builder-ui.js"></script> <!-- builde 관련 js-->
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header">
+				
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+				
+			</div>
+			<!-- //#container -->
+
+		</div>
+		<!-- //#wrapper -->
+
+
+		<!--  알림풍선 유형 popup -->
+		<div class="pop_layer type02" id="chatTypeNotice" style="display: block;">
+			<div class="pop_title_area">
+				<div class="pop_title_inner">
+					<button type="button" class="btn1">유형 재선택</button>
+					<h1 class="pop_title">알림풍선 유형
+						<button type="button" class="btn1">메뉴얼</button>
+					</h1>
+					<div class="btn_wrap">
+						<button type="button" class="btn1" id="btnViewSource">소스보기</button>
+						<button type="button" class="btn1" id="btnAnswer">답변유형등록</button>
+					</div>
+				</div>
+			</div>
+			<div class="pop_container">
+				<div class="tem_form_wrap">
+					<div class="left">
+						<ul class="md_list">
+							<li>
+								<div class="md_box">
+									<div class="md_left">
+										<div class="tit_area">
+											<p class="tit">텍스트 Module</p>
+											
+											<div class="tooltip">
+												<a href="#">도움말</a>
+												<!-- <div class="tooltip_txt">
+													ㅁ아런민ㅇ럼ㄴ알머니러나밀아ㅓㅁㄴ이
+												</div> -->
+											</div>
+										</div>
+										<textarea name="" id="" value="@선택카드_종류  에 대한 답변입니다." style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
+									</div>
+									<div class="md_right">
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>엔티티</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>질의어</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>사용자정보</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>Json Response</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+										<div class="input_wrap">
+											<input type="checkbox" name="" id="inputTitle" checked="checked">
+											<label for="inputTitle">타이틀</label>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="md_box">
+									<div class="md_left">
+										<div class="tit_area">
+											<p class="tit">텍스트 Module</p>
+											<a href="#" class="tooltip">도움말</a>
+											<!-- <div class="tooltip">
+												<p>ddd</p>
+											</div> -->
+										</div>
+										<textarea name="" id="" value="@선택카드_종류  에 대한 답변입니다." style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
+									</div>
+									<div class="md_right">
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>엔티티</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>질의어</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+										<ul class="component_list">
+											<li>
+												<a href="#"><span>사용자정보</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+											<li>
+												<a href="#"><span>Json Response</span></a>
+												<div class="dropDown">
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+													<a href="#">aaa</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div class="md_box">
+									<div class="md_left">
+										<div class="tit_area">
+											<p class="tit">이미지 Module</p>
+											<a href="#" class="tooltip">도움말</a>
+											<!-- <div class="tooltip">
+												<p>ddd</p>
+											</div> -->
+										</div>
+										<div class="img_area">
+											<img src="../img/img_temp.jpg" alt="">
+										</div>
+										
+										<div class="desc_text">
+											이미지 형식 : jpg, png,jpeg, bmp, svg<br>
+											이미지 권장 사이즈 : 150px×150px
+										</div>
+									</div>
+									<div class="md_right">
+										<p class="desc_text2">이미지를 직접 선택하거나 이미지 URL을 입력할 수 있습니다.</p>
+										<ul class="enroll_info">
+											<li class="sel_file">
+												<select name="" class="type-selector">
+													<option value="fileUpload">이미지 업로드</option>
+													<option value="urlUpload">이미지 URL 등록</option>
+												</select> 
+												<!-- 201102 수정 -->
+												<div class="upload-box fileUpload">
+													<input type="file" id="uploadFile" class="upload-hidden">
+													<label for="uploadFile">파일선택</label>
+													<input class="upload-name" value="" disabled="disabled">
+													<button class="file-remover" type="button" style="display:none;">삭제</button>
+												</div>
+												<!-- <input type="file" name="" id="upload1" class="fileUpload" style="width: 100%;"> -->
+												<input type="text" name="" id="upload2" class="urlUpload" placeholder="이미지 URL을 입력하세요" style="width: 270px;">
+											</li>
+											<li class="link">
+												<label for="golink">링크 URL</label>
+												<input type="text" name="" id="golink" placeholder="클릭 시 이동할 URL 주소 입력" style="width: 325px;">
+											</li>
+											<li>
+												<textarea name="" id="" placeholder="설명을 입력해 주세요. ( 최대 50글자 이내)" style="width: 100%;height: 75px;"></textarea>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+					</div>
+					<div class="right">
+						<div class="iframe_wrap">
+							<button type="button" class="btn_represh"><span>미리보기</span></button>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="pop_close">닫기</button>
+		</div>
+
+
+
+
+		<!-- 소스보기 popup -->
+		<div class="pop_layer type01" id="sourceView">
+			<div class="pop_title_area">
+				<div class="pop_title_inner">
+					<button type="button" class="btn1">유형 재선택</button>
+					<h1 class="pop_title">기본 유형
+						<button type="button" class="btn1">메뉴얼</button>
+					</h1>
+					<div class="btn_wrap">
+						<button type="button" class="btn1" id="btnViewSource">편집기보기</button>
+						<button type="button" class="btn1">답변유형등록</button>
+					</div>
+				</div>
+			</div>
+			<div class="pop_container">
+				<div class="tem_form_wrap">
+					
+					<div class="source">
+						<div class="tit_area">
+							<p class="tit">소스보기</p>
+						</div>
+						<div class="source_in">
+							소스영역
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<button type="button" class="pop_close">닫기</button>
+		</div>
+
+
+
+		<!-- 답변유형 등록 popup -->
+		<div class="pop_layer" id="popAnswerConfirm">
+			<div class="msg_wrap">
+				<div class="msg_box">
+					<strong>답변 유형 등록</strong>
+					<p>답변유형이 정상적으로 등록되었습니다. <br />
+						단, 답변 유형이 최종적으로 챗봇에 반영이 되려면,<br />
+						Dialog 상단의 “저장” 버튼을 클릭하여야 반영됩니다. 
+					</p>
+					<div class="btn_area">
+						<button type="button" class="btn1 btn_confirm">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 닫기 버튼 누를때 -->
+		<div class="pop_layer" id="popCloseMsg">
+			<div class="msg_wrap">
+				<div class="msg_box">
+					<strong>이 페이지에서 나가시겠습니까?</strong>
+					<p>아직 작업중인 내용이 있습니다. <br />
+						지금 이 페이지를 떠나게 되면,<br /> 
+						작업중인 내용을 모두 잃어 버리게 됩니다. 
+					</p>
+					<div class="btn_area">
+						<button type="button" class="btn1 btn_stay">머무르기</button>
+						<button type="button" class="btn1 btn_out">나가기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		
+
+
+		
+
+		
+
+	</body>
+</html>

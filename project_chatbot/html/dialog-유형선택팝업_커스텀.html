@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AI 관리자</title>
+		<link rel="stylesheet" href="../css/builder-ui.css" /> <!-- builde 관련 css-->
+		<link rel="stylesheet" href="../css/common.css" />
+		<script src="../js/jquery-1.12.4.min.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/builder-ui.js"></script> <!-- builde 관련 js-->
+	</head>
+	<body>
+		<!-- #wrapper -->
+		<div id="wrapper">
+			<!-- #header -->
+			<div id="header">
+			</div>
+			<!-- //#header -->
+
+			<!-- #container -->
+			<div id="container">
+			</div>
+			<!-- //#container -->
+		</div>
+		<!-- //#wrapper -->
+
+
+
+		<!-- 커스텀 제작 popup -->
+		<div class="pop_layer type01" id="chatTypeDeCustom" style="display: block;">
+			<div class="pop_title_area">
+				<div class="pop_title_inner">
+					<button type="button" class="btn1">유형 재선택</button>
+					<h1 class="pop_title">Custom 제작
+						<button type="button" class="btn1">메뉴얼</button>
+					</h1>
+					<div class="btn_wrap">
+						<button type="button" class="btn1">편집모드</button>
+						<button type="button" class="btn1" id="btnAnswer">답변유형등록</button>
+					</div>
+				</div>
+			</div>
+			<div class="pop_container">
+				<div class="tem_form_wrap">
+					
+					<div class="source">
+						<div class="tit_area">
+							<p class="tit">소스보기</p>
+						</div>
+						<div class="source_in">
+							소스영역
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<button type="button" class="pop_close">닫기</button>
+		</div>
+
+
+
+		<!-- 답변유형 등록 popup -->
+		<div class="pop_layer" id="popAnswerConfirm">
+			<div class="msg_wrap">
+				<div class="msg_box">
+					<strong>답변 유형 등록</strong>
+					<p>답변유형이 정상적으로 등록되었습니다. <br />
+						단, 답변 유형이 최종적으로 챗봇에 반영이 되려면,<br />
+						Dialog 상단의 “저장” 버튼을 클릭하여야 반영됩니다. 
+					</p>
+					<div class="btn_area">
+						<button type="button" class="btn1 btn_confirm">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 닫기 버튼 누를때 -->
+		<div class="pop_layer" id="popCloseMsg">
+			<div class="msg_wrap">
+				<div class="msg_box">
+					<strong>이 페이지에서 나가시겠습니까?</strong>
+					<p>아직 작업중인 내용이 있습니다. <br />
+						지금 이 페이지를 떠나게 되면,<br /> 
+						작업중인 내용을 모두 잃어 버리게 됩니다. 
+					</p>
+					<div class="btn_area">
+						<button type="button" class="btn1 btn_stay">머무르기</button>
+						<button type="button" class="btn1 btn_out">나가기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+	</body>
+</html>
